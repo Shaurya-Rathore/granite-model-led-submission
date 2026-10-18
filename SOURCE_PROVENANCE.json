@@ -1,0 +1,346 @@
+{
+  "created_at": "2026-10-18T13:24:04.042696+00:00",
+  "python": "3.12.12",
+  "default_stage": "named_review",
+  "candidate_stage": "named_json_short",
+  "extraction": "model-based; header parsing and literal entity anchoring are symbolic",
+  "runtime_provenance": [
+    {
+      "source": "model_solver/__init__.py",
+      "source_sha256": "dd506660683b9b15a83b52653e263d8e58465687fab87c9e343019999f6bd048",
+      "packaged": "model_solver/__init__.py",
+      "changes": [],
+      "packaged_sha256": "dd506660683b9b15a83b52653e263d8e58465687fab87c9e343019999f6bd048"
+    },
+    {
+      "source": "model_solver/engine.py",
+      "source_sha256": "1ba38b647e23b245f2c95619a780d44f41d327f8d8f42f573361d46e9ca8994e",
+      "packaged": "model_solver/engine.py",
+      "changes": [],
+      "packaged_sha256": "1ba38b647e23b245f2c95619a780d44f41d327f8d8f42f573361d46e9ca8994e"
+    },
+    {
+      "source": "model_solver/flat.py",
+      "source_sha256": "6d7823440d8f90e29dd95042ef370e94d815738b1371eb338f3427a9cca99035",
+      "packaged": "model_solver/flat.py",
+      "changes": [],
+      "packaged_sha256": "6d7823440d8f90e29dd95042ef370e94d815738b1371eb338f3427a9cca99035"
+    },
+    {
+      "source": "model_solver/representation.py",
+      "source_sha256": "acad8a46dee2a829f4141c485863e256e569b2a2a0d6b44392068c983d5826a9",
+      "packaged": "model_solver/representation.py",
+      "changes": [],
+      "packaged_sha256": "acad8a46dee2a829f4141c485863e256e569b2a2a0d6b44392068c983d5826a9"
+    },
+    {
+      "source": "model_solver/named.py",
+      "source_sha256": "c6e9babd4c01e6baea258d5414858d4e1f6fed983e8b435d503fc84383c63b95",
+      "packaged": "model_solver/named.py",
+      "changes": [],
+      "packaged_sha256": "c6e9babd4c01e6baea258d5414858d4e1f6fed983e8b435d503fc84383c63b95"
+    },
+    {
+      "source": "model_solver/named_prompts.py",
+      "source_sha256": "e428e044d0748c2208708633444cfb438b9342dcf07dcb2906efb3914b20af9a",
+      "packaged": "model_solver/named_prompts.py",
+      "changes": [],
+      "packaged_sha256": "e428e044d0748c2208708633444cfb438b9342dcf07dcb2906efb3914b20af9a"
+    },
+    {
+      "source": "model_solver/incremental_prompts.py",
+      "source_sha256": "ef9c4a9f58a806a01d6fdc02fc972122d4888fa8266a908bf8d90354c87f549e",
+      "packaged": "model_solver/incremental_prompts.py",
+      "changes": [],
+      "packaged_sha256": "ef9c4a9f58a806a01d6fdc02fc972122d4888fa8266a908bf8d90354c87f549e"
+    },
+    {
+      "source": "model_solver/prompts.py",
+      "source_sha256": "2ac3644554112d304855ef49e708b6e51e00ae3c429829f8f232a3e0ad5e0c3d",
+      "packaged": "model_solver/prompts.py",
+      "changes": [],
+      "packaged_sha256": "2ac3644554112d304855ef49e708b6e51e00ae3c429829f8f232a3e0ad5e0c3d"
+    },
+    {
+      "source": "model_solver/transport.py",
+      "source_sha256": "a9763007c81c69aa8e6ac99c3f86836ebf5bf97c8b690f0b644c20f7f8ca193b",
+      "packaged": "model_solver/transport.py",
+      "changes": [],
+      "packaged_sha256": "a9763007c81c69aa8e6ac99c3f86836ebf5bf97c8b690f0b644c20f7f8ca193b"
+    },
+    {
+      "source": "model_solver/format_hint.py",
+      "source_sha256": "6fd8bb8a8f35d42440abaa44600ad755844ddf75ecb41774e0a2b76f32524008",
+      "packaged": "model_solver/format_hint.py",
+      "changes": [],
+      "packaged_sha256": "6fd8bb8a8f35d42440abaa44600ad755844ddf75ecb41774e0a2b76f32524008"
+    },
+    {
+      "source": "model_solver/incremental.py",
+      "source_sha256": "af6012de87767d223ea51e6f56ee170666c63ccc17e8fc449d12c3c39eeeff10",
+      "packaged": "model_solver/incremental.py",
+      "changes": [
+        "Limit exposed stages and remove dispatch to unbundled experiments; interpretation body unchanged."
+      ],
+      "packaged_sha256": "2e97d20fa146f228459d50c4374139b6a498670cb625c149a0d6c75b6dba8eb2"
+    },
+    {
+      "source": "model_solver/pipeline.py",
+      "source_sha256": "fc9a7a694431a8370a72337e55d095fa7641cb64e37d330955ee0528f5b11944",
+      "packaged": "model_solver/pipeline.py",
+      "changes": [],
+      "packaged_sha256": "fc9a7a694431a8370a72337e55d095fa7641cb64e37d330955ee0528f5b11944"
+    },
+    {
+      "source": "model_solver/run.py",
+      "source_sha256": "3fabf36aa6ce7bcbb287a399043005ce49ec70b8820f76c35d8b2af3ce5d8d6f",
+      "packaged": "model_solver/run.py",
+      "changes": [
+        "Default to one item worker, matching the sequential measured screen."
+      ],
+      "packaged_sha256": "a39fd2fe1e5421dd900d9e89e57437143a3c64af0a9ffcfad2b26076f337b3b0"
+    },
+    {
+      "source": "model_solver/evaluate.py",
+      "source_sha256": "d1057edbe8965f7f869a216851456e8a736b99b6290c6216a1dc6c76d5939200",
+      "packaged": "model_solver/evaluate.py",
+      "changes": [],
+      "packaged_sha256": "d1057edbe8965f7f869a216851456e8a736b99b6290c6216a1dc6c76d5939200"
+    },
+    {
+      "source": "model_solver/test_named.py",
+      "source_sha256": "f4792c17d2c4b27f4a3bebc4da91972a662b13fcd2ce0566618fd910554d484c",
+      "packaged": "model_solver/test_named.py",
+      "changes": [],
+      "packaged_sha256": "f4792c17d2c4b27f4a3bebc4da91972a662b13fcd2ce0566618fd910554d484c"
+    },
+    {
+      "source": "model_solver/test_incremental.py",
+      "source_sha256": "de688a376eb9ffcb87230063cf7d07809002bd18806c32708f5c4e8ed6250a5c",
+      "packaged": "model_solver/test_incremental.py",
+      "changes": [],
+      "packaged_sha256": "de688a376eb9ffcb87230063cf7d07809002bd18806c32708f5c4e8ed6250a5c"
+    },
+    {
+      "source": "model_solver/test_model_solver.py",
+      "source_sha256": "79c7640b6a22a8404f403424240e21878c2a8af0a833a9e661842213f9d58f0e",
+      "packaged": "model_solver/test_model_solver.py",
+      "changes": [],
+      "packaged_sha256": "79c7640b6a22a8404f403424240e21878c2a8af0a833a9e661842213f9d58f0e"
+    },
+    {
+      "source": "model_solver/legacy_v1/__init__.py",
+      "source_sha256": "dd506660683b9b15a83b52653e263d8e58465687fab87c9e343019999f6bd048",
+      "packaged": "model_solver/legacy_v1/__init__.py",
+      "changes": [],
+      "packaged_sha256": "dd506660683b9b15a83b52653e263d8e58465687fab87c9e343019999f6bd048"
+    },
+    {
+      "source": "model_solver/legacy_v1/engine.py",
+      "source_sha256": "1ba38b647e23b245f2c95619a780d44f41d327f8d8f42f573361d46e9ca8994e",
+      "packaged": "model_solver/legacy_v1/engine.py",
+      "changes": [],
+      "packaged_sha256": "1ba38b647e23b245f2c95619a780d44f41d327f8d8f42f573361d46e9ca8994e"
+    },
+    {
+      "source": "model_solver/legacy_v1/pipeline.py",
+      "source_sha256": "76e5193484b7456a749d377f96dc04858e932227d32d4cbaca3d078e9ba4a1e8",
+      "packaged": "model_solver/legacy_v1/pipeline.py",
+      "changes": [],
+      "packaged_sha256": "76e5193484b7456a749d377f96dc04858e932227d32d4cbaca3d078e9ba4a1e8"
+    },
+    {
+      "source": "model_solver/legacy_v1/prompts.py",
+      "source_sha256": "2ac3644554112d304855ef49e708b6e51e00ae3c429829f8f232a3e0ad5e0c3d",
+      "packaged": "model_solver/legacy_v1/prompts.py",
+      "changes": [],
+      "packaged_sha256": "2ac3644554112d304855ef49e708b6e51e00ae3c429829f8f232a3e0ad5e0c3d"
+    },
+    {
+      "source": "model_solver/legacy_v1/representation.py",
+      "source_sha256": "acad8a46dee2a829f4141c485863e256e569b2a2a0d6b44392068c983d5826a9",
+      "packaged": "model_solver/legacy_v1/representation.py",
+      "changes": [],
+      "packaged_sha256": "acad8a46dee2a829f4141c485863e256e569b2a2a0d6b44392068c983d5826a9"
+    },
+    {
+      "source": "model_solver/legacy_v1/run.py",
+      "source_sha256": "5bbf7bccb8fe3c01dde0f99018a1de8af2103974c097049fe3d75d3bfd390652",
+      "packaged": "model_solver/legacy_v1/run.py",
+      "changes": [],
+      "packaged_sha256": "5bbf7bccb8fe3c01dde0f99018a1de8af2103974c097049fe3d75d3bfd390652"
+    },
+    {
+      "source": "model_solver/legacy_v1/test_model_solver.py",
+      "source_sha256": "227aa955e340d2a0035d2c7cc1b7dac1eb0deaabd749a4d1419c48543479c6ad",
+      "packaged": "model_solver/legacy_v1/test_model_solver.py",
+      "changes": [],
+      "packaged_sha256": "227aa955e340d2a0035d2c7cc1b7dac1eb0deaabd749a4d1419c48543479c6ad"
+    },
+    {
+      "source": "model_solver/legacy_v1/transport.py",
+      "source_sha256": "e52997eef0e8b1491fceb321bee1854443ae87f91741804b92852949c1dded32",
+      "packaged": "model_solver/legacy_v1/transport.py",
+      "changes": [],
+      "packaged_sha256": "e52997eef0e8b1491fceb321bee1854443ae87f91741804b92852949c1dded32"
+    }
+  ],
+  "evidence_provenance": [
+    {
+      "source": "model_solver/batch-v5-screen-items.json",
+      "packaged": "evidence/batch-v5-screen-items.json",
+      "sha256": "f559615bdfc3938224922b6fbcf437a3f4da81d2bb3da589883e7bc56812ba81"
+    },
+    {
+      "source": "model_solver/batch-v5-split.json",
+      "packaged": "evidence/batch-v5-split.json",
+      "sha256": "2a4cac141320a2691d92d8a2ec8d39290586ad312ebdd02f94cfaea9784d9cd2"
+    },
+    {
+      "source": "model_solver/context-probe-manifest.json",
+      "packaged": "evidence/context-probe-manifest.json",
+      "sha256": "e9a0259d56566d199d2fd283b5da2c1d0050c259719ac03eaae54459c00a9dfd"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-manifest.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-manifest.json",
+      "sha256": "72a6e5fe619480584878b215f3876a30d253d3e1ba1431c78f149acde725d7e7"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-1x-answers.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-1x-answers.json",
+      "sha256": "4aafedf321342f4c9b46b2be790fc035a4633e54a5691c03287b58b5560de804"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-1x-traces.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-1x-traces.json",
+      "sha256": "142134c19954a105bc03d7312db25643557fbc66ac1c74f41c200cb9661182de"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-1x-score.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-1x-score.json",
+      "sha256": "cefe6c0364cfd2012059ed21070588ec15b6084ebd814d6cddb1b73b67fb83b8"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-3x-answers.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-3x-answers.json",
+      "sha256": "4aafedf321342f4c9b46b2be790fc035a4633e54a5691c03287b58b5560de804"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-3x-traces.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-3x-traces.json",
+      "sha256": "dc067be7f8bd70d19aea65fbac0b40e8be7461aab6083976f3761e5060e6eacd"
+    },
+    {
+      "source": "model_solver/batch-v5-screen-named_review-01-3x-score.json",
+      "packaged": "evidence/batch-v5-screen-named_review-01-3x-score.json",
+      "sha256": "199185d28d10ec18f39ecf58239b76230ee99263215c866a9f7acc1c2babd2a0"
+    },
+    {
+      "source": "model_solver/batch-v16-screen-named_json_short-01-manifest.json",
+      "packaged": "evidence/batch-v16-screen-named_json_short-01-manifest.json",
+      "sha256": "38129680d3e21d4b14df8e7322c9108c3c9610fe84ee73c33e24a7ca016ac960"
+    },
+    {
+      "source": "model_solver/batch-v16-screen-named_json_short-01-1x-answers.json",
+      "packaged": "evidence/batch-v16-screen-named_json_short-01-1x-answers.json",
+      "sha256": "1e04b1c9eb0ffdfa2219acc208847b8b8db94e498535dc8acce2387be6013e8f"
+    },
+    {
+      "source": "model_solver/batch-v16-screen-named_json_short-01-1x-traces.json",
+      "packaged": "evidence/batch-v16-screen-named_json_short-01-1x-traces.json",
+      "sha256": "f28f63428e595abdd70bc67309c2715a11a590e583fa990799c9d6bc73015edf"
+    },
+    {
+      "source": "model_solver/batch-v16-screen-named_json_short-01-1x-score.json",
+      "packaged": "evidence/batch-v16-screen-named_json_short-01-1x-score.json",
+      "sha256": "58db323cbfb810ca90de4f6dfb2d2f0dc058cb249a0cad85678b4bc471cbbee7"
+    },
+    {
+      "source": "model_solver/batch-v16-correction-named_json_short-01-manifest.json",
+      "packaged": "evidence/batch-v16-correction-named_json_short-01-manifest.json",
+      "sha256": "1dee6ea253e1a7b841ecadf92bbaef7d612b409268a18b1cef3f89249db0c47f"
+    },
+    {
+      "source": "model_solver/batch-v16-correction-named_json_short-01-3x-answers.json",
+      "packaged": "evidence/batch-v16-correction-named_json_short-01-3x-answers.json",
+      "sha256": "00f79716c94d792a6e6d727323a5751f57b6e44d0dff6ea327582566533adf21"
+    },
+    {
+      "source": "model_solver/batch-v16-correction-named_json_short-01-3x-traces.json",
+      "packaged": "evidence/batch-v16-correction-named_json_short-01-3x-traces.json",
+      "sha256": "63e8ba7ed47864006bd6b56e9d57e1ab747e7c4b7a6733f34b8274d5f6ba4d34"
+    },
+    {
+      "source": "model_solver/batch-v16-correction-named_json_short-01-3x-score.json",
+      "packaged": "evidence/batch-v16-correction-named_json_short-01-3x-score.json",
+      "sha256": "44e70bc5d0eacb60ff58cec1f0958bcb8086677bc86f8c3d01daa213f68a3b5e"
+    },
+    {
+      "source": "model_solver/batch-v16-repeat-named_json_short-01-manifest.json",
+      "packaged": "evidence/batch-v16-repeat-named_json_short-01-manifest.json",
+      "sha256": "50eff22a5f3cc272fbbe2d61dfea58e28e3611f58c193f882c72bf2895d6ebb5"
+    },
+    {
+      "source": "model_solver/batch-v16-repeat-named_json_short-01-1x-answers.json",
+      "packaged": "evidence/batch-v16-repeat-named_json_short-01-1x-answers.json",
+      "sha256": "030b123ff247bd9c2dd09d58138f4263edf664380b0e18bf022535ed4ef93446"
+    },
+    {
+      "source": "model_solver/batch-v16-repeat-named_json_short-01-1x-traces.json",
+      "packaged": "evidence/batch-v16-repeat-named_json_short-01-1x-traces.json",
+      "sha256": "a2a49329e6012f5b3c60546e5fa78923d7549adbe5baafe4abbe5c010717355e"
+    },
+    {
+      "source": "model_solver/batch-v16-repeat-named_json_short-01-1x-score.json",
+      "packaged": "evidence/batch-v16-repeat-named_json_short-01-1x-score.json",
+      "sha256": "1c08a6458cadc63f6e589232af3216e6e5be18abe9484514c9fb89c17fc67d53"
+    },
+    {
+      "source": "granite_solver/source-check-no-rules-1x-score.json",
+      "packaged": "evidence/source-check-no-rules-1x-score.json",
+      "sha256": "8ca24a6973939536aa4f20968faaf8fd5d682cb4823d1427a9c134a3f570d1ca",
+      "scope": "Historical different implementation; not a score of this submission."
+    },
+    {
+      "source": "model_solver/short-hint-validation-control-01-manifest.json",
+      "source_sha256": "7def9395216b0565dcbd88e6e6c9ec548d9ffe66321dee1ff77b0fe9bb0b1a12",
+      "packaged": "evidence/evaluation-stop.json",
+      "sha256": "b47e7ff7b972e413f01739c097b11481b03a1398e5733427c8468c19ca7c3577",
+      "scope": "Derived de-identified service summary; original attempts remain unchanged in the development workspace."
+    }
+  ],
+  "original_inputs_sha256": {
+    "items.json": "1f8b0e27dfab48d41d85f1af26adc38c060bb07d846d9d2adb838e8c35aee908",
+    "visible_key.json": "2c263ae6ec8d02f0172af877bb4a419069722f67870daa2e16804682f5fa643e",
+    "score.py": "049a8ad49ce2406c6c089d7b5cc6db70f0b899a97b4da1960bc7e30adef23c1b",
+    "CANDIDATE_BRIEF.md": "8a9028aff0f119e500ebe040b3bf609fc04da2f54ea46d0f447e473bbce8dd9e"
+  },
+  "excluded": [
+    ".env and credentials",
+    "granite_solver implementation and rules-heavy scores",
+    "gemini_llm_calls.csv inventory",
+    "unselected experimental stages",
+    "bytecode and environment directories"
+  ],
+  "accuracy_scope": "Selected public six-case pilot only; full current-system curve and component ablations unmeasured.",
+  "measured_default_policy_equivalence": {
+    "snapshot": "model_solver/batch-v5-screen-source-snapshot.json",
+    "snapshot_sha256": "440a97e5123d5fee674740444511037b7c8a291cdf2a67c562925e745873db32",
+    "unchanged_core_files_sha256": {
+      "engine.py": "1ba38b647e23b245f2c95619a780d44f41d327f8d8f42f573361d46e9ca8994e",
+      "flat.py": "6d7823440d8f90e29dd95042ef370e94d815738b1371eb338f3427a9cca99035",
+      "named.py": "c6e9babd4c01e6baea258d5414858d4e1f6fed983e8b435d503fc84383c63b95",
+      "named_prompts.py": "e428e044d0748c2208708633444cfb438b9342dcf07dcb2906efb3914b20af9a",
+      "representation.py": "acad8a46dee2a829f4141c485863e256e569b2a2a0d6b44392068c983d5826a9",
+      "incremental_prompts.py": "ef9c4a9f58a806a01d6fdc02fc972122d4888fa8266a908bf8d90354c87f549e"
+    },
+    "unchanged_interpretation_body_sha256": "028328e601e686f7fefb1484fd29a93ada5f79254a5bd9e53bd46673101c90c8",
+    "transport_request_equivalence": {
+      "status": "passed",
+      "strict_requests_compared": 24,
+      "method": "Capture original frozen v5 client and packaged client on identical saved prompts/schemas and mocked responses; URL, payload and headers exactly equal.",
+      "new_live_requests": 0
+    }
+  }
+}

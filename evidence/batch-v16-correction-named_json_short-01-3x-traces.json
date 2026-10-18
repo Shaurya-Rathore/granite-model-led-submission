@@ -1,0 +1,1664 @@
+{
+  "B2-022": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "3x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": true,
+      "paired_examples": true,
+      "independent_read": true,
+      "action_review": true
+    },
+    "header": {
+      "staff": [
+        "Priya",
+        "Samuel",
+        "Ayesha",
+        "Tomas",
+        "Ingrid"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Priya",
+        "Ayesha",
+        "Ingrid"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Priya"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Samuel"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Ayesha"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Tomas"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Ingrid"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "prompt_chars": 7208,
+        "schema_chars": 6017,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [
+          {
+            "line": null,
+            "errors": [
+              "unexpected source line"
+            ]
+          }
+        ],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P4",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              },
+              {
+                "op": "next",
+                "earlier": "P0",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P0",
+                "station": "S1",
+                "polarity": "negated",
+                "evidence": "Calibration is not Priya's station."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Samuel comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Ayesha comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P3",
+                "ends": [
+                  "P2",
+                  "P4"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P3",
+                "block": "T3",
+                "polarity": "affirmed",
+                "evidence": "The 13:00 block is Tomas's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P2",
+                "block": "T1",
+                "polarity": "negated",
+                "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T0",
+                "polarity": "affirmed",
+                "evidence": "I'm fairly sure the 07:00 block is Priya's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "It bears repeating: The person on intake precedes Ayesha."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "retained_previous_lines": []
+      },
+      {
+        "phase": "independent",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "prompt_chars": 7339,
+        "schema_chars": 6021,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P4",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              },
+              {
+                "op": "next",
+                "earlier": "P0",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P0",
+                "station": "S1",
+                "polarity": "negated",
+                "evidence": "Calibration is not Priya's station."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Samuel comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Ayesha comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P3",
+                "ends": [
+                  "P2",
+                  "P4"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P3",
+                "block": "T3",
+                "polarity": "affirmed",
+                "evidence": "The 13:00 block is Tomas's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P2",
+                "block": "T1",
+                "polarity": "negated",
+                "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T0",
+                "polarity": "affirmed",
+                "evidence": "I'm fairly sure the 07:00 block is Priya's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "It bears repeating: The person on intake precedes Ayesha."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [],
+        "retained_previous_lines": [],
+        "primary_fallback_lines": []
+      },
+      {
+        "phase": "review",
+        "source_lines": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          17,
+          20
+        ],
+        "prompt_chars": 8541,
+        "schema_chars": 5947,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "target_reasons": {
+          "4": [
+            "ignored_with_multiple_header_entities"
+          ],
+          "5": [
+            "ignored_with_multiple_header_entities"
+          ],
+          "6": [
+            "ignored_with_multiple_header_entities"
+          ],
+          "7": [
+            "ignored_with_multiple_header_entities"
+          ],
+          "8": [
+            "negation_or_multiple_claims",
+            "adjacency_claim"
+          ],
+          "10": [
+            "negation_or_multiple_claims"
+          ],
+          "11": [
+            "ignored_with_multiple_header_entities"
+          ],
+          "17": [
+            "negation_or_multiple_claims"
+          ],
+          "20": [
+            "ignored_with_multiple_header_entities"
+          ]
+        },
+        "untouched_lines": [
+          3,
+          9,
+          12,
+          13,
+          14,
+          15,
+          16,
+          18,
+          19,
+          21
+        ],
+        "problems": [
+          {
+            "line": 10,
+            "errors": [
+              "only replace may contain new facts"
+            ],
+            "rejected_rows": [
+              {
+                "line": 10,
+                "action": "keep",
+                "facts": [
+                  {
+                    "op": "station",
+                    "person": "Priya",
+                    "station": "calibration",
+                    "negated": true
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "line": 17,
+            "errors": [
+              "only replace may contain new facts"
+            ],
+            "rejected_rows": [
+              {
+                "line": 17,
+                "action": "keep",
+                "facts": [
+                  {
+                    "op": "block",
+                    "person": "Ayesha",
+                    "block": "09:00",
+                    "negated": true
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "actions": [
+          {
+            "line": 4,
+            "action": "keep",
+            "facts": []
+          },
+          {
+            "line": 5,
+            "action": "keep",
+            "facts": []
+          },
+          {
+            "line": 6,
+            "action": "keep",
+            "facts": []
+          },
+          {
+            "line": 7,
+            "action": "keep",
+            "facts": []
+          },
+          {
+            "line": 8,
+            "action": "replace",
+            "facts": [
+              {
+                "op": "between",
+                "middle": "Tomas",
+                "endpoint1": "Ingrid",
+                "endpoint2": "Priya",
+                "negated": false
+              }
+            ]
+          },
+          {
+            "line": 10,
+            "action": "keep",
+            "facts": [
+              {
+                "op": "station",
+                "person": "Priya",
+                "station": "calibration",
+                "negated": true
+              }
+            ]
+          },
+          {
+            "line": 11,
+            "action": "keep",
+            "facts": []
+          },
+          {
+            "line": 17,
+            "action": "keep",
+            "facts": [
+              {
+                "op": "block",
+                "person": "Ayesha",
+                "block": "09:00",
+                "negated": true
+              }
+            ]
+          },
+          {
+            "line": 20,
+            "action": "keep",
+            "facts": []
+          }
+        ],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 5,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 8,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P3",
+                "ends": [
+                  "P4",
+                  "P0"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 9,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P0",
+                "station": "S1",
+                "polarity": "negated",
+                "evidence": "Calibration is not Priya's station."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 12,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Samuel comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Ayesha comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P3",
+                "ends": [
+                  "P2",
+                  "P4"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P3",
+                "block": "T3",
+                "polarity": "affirmed",
+                "evidence": "The 13:00 block is Tomas's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P2",
+                "block": "T1",
+                "polarity": "negated",
+                "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T0",
+                "polarity": "affirmed",
+                "evidence": "I'm fairly sure the 07:00 block is Priya's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "supported"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "It bears repeating: The person on intake precedes Ayesha."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          8
+        ],
+        "unresolved_review_lines": [
+          10,
+          17
+        ],
+        "retained_previous_lines": [
+          10,
+          17
+        ]
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 5,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 6,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 8,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P3",
+            "ends": [
+              "P4",
+              "P0"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 9,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P0",
+            "station": "S1",
+            "polarity": "negated",
+            "evidence": "Calibration is not Priya's station."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 12,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P1",
+            "polarity": "affirmed",
+            "evidence": "Intake is covered before Samuel comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "Intake is covered before Ayesha comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P3",
+            "ends": [
+              "P2",
+              "P4"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P3",
+            "block": "T3",
+            "polarity": "affirmed",
+            "evidence": "The 13:00 block is Tomas's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P2",
+            "block": "T1",
+            "polarity": "negated",
+            "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P0",
+            "block": "T0",
+            "polarity": "affirmed",
+            "evidence": "I'm fairly sure the 07:00 block is Priya's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "supported"
+      },
+      {
+        "line": 21,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "It bears repeating: The person on intake precedes Ayesha."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 8,
+        "quote": "Tomas is on after one of Ingrid and Priya and before the other.",
+        "op": "between",
+        "middle": "P3",
+        "ends": [
+          "P4",
+          "P0"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+      },
+      {
+        "line": 10,
+        "quote": "Calibration is not Priya's station.",
+        "op": "station",
+        "person": "P0",
+        "station": "S1",
+        "polarity": "negated",
+        "evidence": "Calibration is not Priya's station."
+      },
+      {
+        "line": 13,
+        "quote": "Intake is covered before Samuel comes on.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P1",
+        "polarity": "affirmed",
+        "evidence": "Intake is covered before Samuel comes on."
+      },
+      {
+        "line": 14,
+        "quote": "Intake is covered before Ayesha comes on.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "Intake is covered before Ayesha comes on."
+      },
+      {
+        "line": 15,
+        "quote": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either.",
+        "op": "between",
+        "middle": "P3",
+        "ends": [
+          "P2",
+          "P4"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+      },
+      {
+        "line": 16,
+        "quote": "The 13:00 block is Tomas's.",
+        "op": "block",
+        "person": "P3",
+        "block": "T3",
+        "polarity": "affirmed",
+        "evidence": "The 13:00 block is Tomas's."
+      },
+      {
+        "line": 17,
+        "quote": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely.",
+        "op": "block",
+        "person": "P2",
+        "block": "T1",
+        "polarity": "negated",
+        "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+      },
+      {
+        "line": 19,
+        "quote": "I'm fairly sure the 07:00 block is Priya's.",
+        "op": "block",
+        "person": "P0",
+        "block": "T0",
+        "polarity": "affirmed",
+        "evidence": "I'm fairly sure the 07:00 block is Priya's."
+      },
+      {
+        "line": 21,
+        "quote": "It bears repeating: The person on intake precedes Ayesha.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "It bears repeating: The person on intake precedes Ayesha."
+      }
+    ],
+    "secondary_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P4",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+          },
+          {
+            "op": "next",
+            "earlier": "P0",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P0",
+            "station": "S1",
+            "polarity": "negated",
+            "evidence": "Calibration is not Priya's station."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 12,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P1",
+            "polarity": "affirmed",
+            "evidence": "Intake is covered before Samuel comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "Intake is covered before Ayesha comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P3",
+            "ends": [
+              "P2",
+              "P4"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P3",
+            "block": "T3",
+            "polarity": "affirmed",
+            "evidence": "The 13:00 block is Tomas's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P2",
+            "block": "T1",
+            "polarity": "negated",
+            "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P0",
+            "block": "T0",
+            "polarity": "affirmed",
+            "evidence": "I'm fairly sure the 07:00 block is Priya's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 21,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "It bears repeating: The person on intake precedes Ayesha."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "unresolved_lines": [
+      10,
+      17
+    ],
+    "provisional_lines": [
+      3,
+      9,
+      10,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      21
+    ],
+    "solution_count": 2,
+    "excess_solutions": false,
+    "model_calls": 3,
+    "raw_model_outputs": [
+      "{\"lines\":[{\"line\":3,\"status\":\"ignored\",\"facts\":[]},{\"line\":4,\"status\":\"ignored\",\"facts\":[]},{\"line\":5,\"status\":\"ignored\",\"facts\":[]},{\"line\":6,\"status\":\"ignored\",\"facts\":[]},{\"line\":7,\"status\":\"ignored\",\"facts\":[]},{\"line\":8,\"status\":\"asserted\",\"facts\":[{\"op\":\"next\",\"earlier\":\"Ingrid\",\"later\":\"Tomas\",\"negated\":false},{\"op\":\"next\",\"earlier\":\"Priya\",\"later\":\"Tomas\",\"negated\":false}]},{\"line\":9,\"status\":\"ignored\",\"facts\":[]},{\"line\":10,\"status\":\"asserted\",\"facts\":[{\"op\":\"station\",\"person\":\"Priya\",\"station\":\"calibration\",\"negated\":true}]},{\"line\":11,\"status\":\"ignored\",\"facts\":[]},{\"line\":12,\"status\":\"ignored\",\"facts\":[]},{\"line\":13,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Samuel\",\"negated\":false}]},{\"line\":14,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Ayesha\",\"negated\":false}]},{\"line\":15,\"status\":\"asserted\",\"facts\":[{\"op\":\"between\",\"middle\":\"Tomas\",\"endpoint1\":\"Ayesha\",\"endpoint2\":\"Ingrid\",\"negated\":false}]},{\"line\":16,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Tomas\",\"block\":\"13:00\",\"negated\":false}]},{\"line\":17,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Ayesha\",\"block\":\"09:00\",\"negated\":true}]},{\"line\":18,\"status\":\"ignored\",\"facts\":[]},{\"line\":19,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Priya\",\"block\":\"07:00\",\"negated\":false}]},{\"line\":20,\"status\":\"ignored\",\"facts\":[]},{\"line\":21,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Ayesha\",\"negated\":false}]},\"]}parse error: trailing comma in JSON array. Remove trailing comma after last element. Also ensure proper JSON formatting. Let me fix that. The output should be a JSON object with a \"\n\n]  \n\n}",
+      "{\"lines\":[{\"line\":3,\"status\":\"ignored\",\"facts\":[]},{\"line\":4,\"status\":\"ignored\",\"facts\":[]},{\"line\":5,\"status\":\"ignored\",\"facts\":[]},{\"line\":6,\"status\":\"ignored\",\"facts\":[]},{\"line\":7,\"status\":\"ignored\",\"facts\":[]},{\"line\":8,\"status\":\"asserted\",\"facts\":[{\"op\":\"next\",\"earlier\":\"Ingrid\",\"later\":\"Tomas\",\"negated\":false},{\"op\":\"next\",\"earlier\":\"Priya\",\"later\":\"Tomas\",\"negated\":false}]},{\"line\":9,\"status\":\"ignored\",\"facts\":[]},{\"line\":10,\"status\":\"asserted\",\"facts\":[{\"op\":\"station\",\"person\":\"Priya\",\"station\":\"calibration\",\"negated\":true}]},{\"line\":11,\"status\":\"ignored\",\"facts\":[]},{\"line\":12,\"status\":\"ignored\",\"facts\":[]},{\"line\":13,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Samuel\",\"negated\":false}]},{\"line\":14,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Ayesha\",\"negated\":false}]},{\"line\":15,\"status\":\"asserted\",\"facts\":[{\"op\":\"between\",\"middle\":\"Tomas\",\"endpoint1\":\"Ayesha\",\"endpoint2\":\"Ingrid\",\"negated\":false}]},{\"line\":16,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Tomas\",\"block\":\"13:00\",\"negated\":false}]},{\"line\":17,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Ayesha\",\"block\":\"09:00\",\"negated\":true}]},{\"line\":18,\"status\":\"ignored\",\"facts\":[]},{\"line\":19,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Priya\",\"block\":\"07:00\",\"negated\":false}]},{\"line\":20,\"status\":\"ignored\",\"facts\":[]},{\"line\":21,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Ayesha\",\"negated\":false}]}]\n}",
+      "{\"lines\":[{\"line\":4,\"action\":\"keep\",\"facts\":[]},{\"line\":5,\"action\":\"keep\",\"facts\":[]},{\"line\":6,\"action\":\"keep\",\"facts\":[]},{\"line\":7,\"action\":\"keep\",\"facts\":[]},{\"line\":8,\"action\":\"replace\",\"facts\":[{\"op\":\"between\",\"middle\":\"Tomas\",\"endpoint1\":\"Ingrid\",\"endpoint2\":\"Priya\",\"negated\":false}]},{\"line\":10,\"action\":\"keep\",\"facts\":[{\"op\":\"station\",\"person\":\"Priya\",\"station\":\"calibration\",\"negated\":true}]},{\"line\":11,\"action\":\"keep\",\"facts\":[]},{\"line\":17,\"action\":\"keep\",\"facts\":[{\"op\":\"block\",\"person\":\"Ayesha\",\"block\":\"09:00\",\"negated\":true}]},{\"line\":20,\"action\":\"keep\",\"facts\":[]}]}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 7985,
+        "output_chars": 1683,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2101,
+          "completion_tokens": 485,
+          "total_tokens": 2586,
+          "cost": 0.00015299,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 2096,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00015299,
+            "upstream_inference_prompt_cost": 3.174e-05,
+            "upstream_inference_completions_cost": 0.00012125
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792327184-jmNRjX9B6vRMdyBUH08f"
+      },
+      {
+        "prompt_chars": 8116,
+        "output_chars": 1493,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2130,
+          "completion_tokens": 444,
+          "total_tokens": 2574,
+          "cost": 0.00023808,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 16,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00023808,
+            "upstream_inference_prompt_cost": 0.00012708,
+            "upstream_inference_completions_cost": 0.000111
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792327194-WPibWGo2CrlYMl1Isttu"
+      },
+      {
+        "prompt_chars": 9298,
+        "output_chars": 585,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2378,
+          "completion_tokens": 175,
+          "total_tokens": 2553,
+          "cost": 0.00018571,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 16,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00018571,
+            "upstream_inference_prompt_cost": 0.00014196,
+            "upstream_inference_completions_cost": 4.375e-05
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792327204-PhFvpv6uxJt8Kjmg8knj"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  }
+}

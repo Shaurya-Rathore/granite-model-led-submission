@@ -1,0 +1,53 @@
+{
+  "created_at": "2026-10-18T13:34:26.288574+00:00",
+  "status": "prepared_with_incomplete_evaluation_evidence",
+  "python": "3.12.12",
+  "platform": "macOS-26.4.1-arm64-arm-64bit",
+  "new_live_model_requests": 0,
+  "unit_checks": {
+    "passed": 111,
+    "failed": 0,
+    "command": "python3 -m unittest model_solver.test_named model_solver.test_incremental model_solver.test_model_solver model_solver.legacy_v1.test_model_solver -q",
+    "working_directory": "submission"
+  },
+  "offline_replay": {
+    "saved_trials": 5,
+    "item_runs": 20,
+    "all_match": true
+  },
+  "strict_request_equivalence": {
+    "requests_compared": 24,
+    "matches": true,
+    "live_requests": 0
+  },
+  "pdf": {
+    "pages": 2,
+    "visual_inspection": "passed on both rendered pages",
+    "generator": "reportlab 4.4.3",
+    "parser": "pypdf 6.0.0"
+  },
+  "ablation_driver": {
+    "dry_run": "passed",
+    "planned_arms": 8,
+    "planned_runs": 19,
+    "full_60_request_upper_bound": 6300,
+    "executed": false
+  },
+  "archive_hygiene": {
+    "explicit_allowlist": true,
+    "credential_like_token_scan": "passed",
+    "actual_env_included": false,
+    "original_inputs_and_sources_unchanged": true,
+    "shelved_rules_hashes_unchanged": true
+  },
+  "unfulfilled_requirements": [
+    "Full current-system 1x/3x/10x evaluation curve",
+    "Measured with/without scores for all components at each applicable budget",
+    "Clean scored removal arms for some structural components",
+    "Live endpoint execution of the assembled package"
+  ],
+  "external_submission": {
+    "sent": false,
+    "reason": "The brief provides no upload destination."
+  }
+}

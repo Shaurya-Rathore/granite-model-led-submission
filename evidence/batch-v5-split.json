@@ -1,0 +1,27 @@
+{
+  "seed": 20261017,
+  "screen": [
+    "B2-002",
+    "B2-037",
+    "B2-006",
+    "B2-022",
+    "B2-023",
+    "B2-005"
+  ],
+  "validation": [
+    "B2-013",
+    "B2-045",
+    "B2-009",
+    "B2-027",
+    "B2-038",
+    "B2-001",
+    "B2-014",
+    "B2-051",
+    "B2-012",
+    "B2-008",
+    "B2-034",
+    "B2-059"
+  ],
+  "selection": "Six-item balanced development screen, twelve-item balanced validation selected before new outputs. Validation excludes annotated/repeated seven-item panel and known B2-018 citation/scope dispute. Visible key used only for balanced split selection and later scoring, never runtime.",
+  "true_held_out": false
+}

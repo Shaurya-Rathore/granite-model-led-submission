@@ -1,0 +1,4350 @@
+{
+  "B2-002": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "1x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": false,
+      "paired_examples": true,
+      "independent_read": false,
+      "action_review": false
+    },
+    "header": {
+      "staff": [
+        "Daniel",
+        "Rohan",
+        "Nadia",
+        "Priya",
+        "Meera"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Daniel",
+        "Rohan",
+        "Meera"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Daniel"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Rohan"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Nadia"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Priya"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Meera"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "prompt_chars": 7360,
+        "schema_chars": 5989,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P2",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Nadia then Priya, back to back."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P4",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "Rohan is on the block directly after Meera."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S1",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "I'm fairly sure the calibration station is covered earlier in the day than Rohan's block."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S2",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "My recollection is that whoever has packing is done before Daniel starts."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P4",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "Worth restating, since it came up twice in handover: As far as I know, Meera hands straight over to Rohan."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T4",
+                "polarity": "negated",
+                "evidence": "Speaking from memory, you will not find Daniel on the 15:00 block."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P4",
+                "station": "S2",
+                "polarity": "negated",
+                "evidence": "Meera has not been put on packing."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S1",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "The calibration station is covered earlier in the day than Priya's block."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P1",
+                "ends": [
+                  "P2",
+                  "P4"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Whichever way round Meera and Nadia are, Rohan is between them."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S1",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "My recollection is that Daniel is on later than whoever has calibration."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 22,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "retained_previous_lines": []
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P2",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Nadia then Priya, back to back."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P4",
+            "later": "P1",
+            "polarity": "affirmed",
+            "evidence": "Rohan is on the block directly after Meera."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S1",
+            "later": "P1",
+            "polarity": "affirmed",
+            "evidence": "I'm fairly sure the calibration station is covered earlier in the day than Rohan's block."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S2",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "My recollection is that whoever has packing is done before Daniel starts."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 12,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P4",
+            "later": "P1",
+            "polarity": "affirmed",
+            "evidence": "Worth restating, since it came up twice in handover: As far as I know, Meera hands straight over to Rohan."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P0",
+            "block": "T4",
+            "polarity": "negated",
+            "evidence": "Speaking from memory, you will not find Daniel on the 15:00 block."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P4",
+            "station": "S2",
+            "polarity": "negated",
+            "evidence": "Meera has not been put on packing."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S1",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "The calibration station is covered earlier in the day than Priya's block."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P1",
+            "ends": [
+              "P2",
+              "P4"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Whichever way round Meera and Nadia are, Rohan is between them."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 21,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S1",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "My recollection is that Daniel is on later than whoever has calibration."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 22,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 4,
+        "quote": "Nadia then Priya, back to back.",
+        "op": "next",
+        "earlier": "P2",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Nadia then Priya, back to back."
+      },
+      {
+        "line": 5,
+        "quote": "Rohan is on the block directly after Meera.",
+        "op": "next",
+        "earlier": "P4",
+        "later": "P1",
+        "polarity": "affirmed",
+        "evidence": "Rohan is on the block directly after Meera."
+      },
+      {
+        "line": 7,
+        "quote": "I'm fairly sure the calibration station is covered earlier in the day than Rohan's block.",
+        "op": "before",
+        "earlier": "S1",
+        "later": "P1",
+        "polarity": "affirmed",
+        "evidence": "I'm fairly sure the calibration station is covered earlier in the day than Rohan's block."
+      },
+      {
+        "line": 9,
+        "quote": "My recollection is that whoever has packing is done before Daniel starts.",
+        "op": "before",
+        "earlier": "S2",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "My recollection is that whoever has packing is done before Daniel starts."
+      },
+      {
+        "line": 12,
+        "quote": "Worth restating, since it came up twice in handover: As far as I know, Meera hands straight over to Rohan.",
+        "op": "next",
+        "earlier": "P4",
+        "later": "P1",
+        "polarity": "affirmed",
+        "evidence": "Worth restating, since it came up twice in handover: As far as I know, Meera hands straight over to Rohan."
+      },
+      {
+        "line": 13,
+        "quote": "Speaking from memory, you will not find Daniel on the 15:00 block.",
+        "op": "block",
+        "person": "P0",
+        "block": "T4",
+        "polarity": "negated",
+        "evidence": "Speaking from memory, you will not find Daniel on the 15:00 block."
+      },
+      {
+        "line": 16,
+        "quote": "Meera has not been put on packing.",
+        "op": "station",
+        "person": "P4",
+        "station": "S2",
+        "polarity": "negated",
+        "evidence": "Meera has not been put on packing."
+      },
+      {
+        "line": 19,
+        "quote": "The calibration station is covered earlier in the day than Priya's block.",
+        "op": "before",
+        "earlier": "S1",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "The calibration station is covered earlier in the day than Priya's block."
+      },
+      {
+        "line": 20,
+        "quote": "Whichever way round Meera and Nadia are, Rohan is between them.",
+        "op": "between",
+        "middle": "P1",
+        "ends": [
+          "P2",
+          "P4"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Whichever way round Meera and Nadia are, Rohan is between them."
+      },
+      {
+        "line": 21,
+        "quote": "My recollection is that Daniel is on later than whoever has calibration.",
+        "op": "before",
+        "earlier": "S1",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "My recollection is that Daniel is on later than whoever has calibration."
+      }
+    ],
+    "secondary_rows": null,
+    "unresolved_lines": [],
+    "provisional_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "solution_count": 1,
+    "excess_solutions": false,
+    "model_calls": 1,
+    "raw_model_outputs": [
+      "{\n  \"lines\": [\n    {\n      \"line\": 3,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 4,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Nadia\",\n          \"later\": \"Priya\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 5,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Meera\",\n          \"later\": \"Rohan\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 6,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 7,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"calibration\",\n          \"later\": \"Rohan\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 8,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 9,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Daniel\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 10,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 11,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 12,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Meera\",\n          \"later\": \"Rohan\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 13,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Daniel\",\n          \"block\": \"15:00\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 14,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 15,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 16,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Meera\",\n          \"station\": \"packing\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 17,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 18,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 19,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"calibration\",\n          \"later\": \"Priya\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 20,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"between\",\n          \"middle\": \"Rohan\",\n          \"endpoint1\": \"Nadia\",\n          \"endpoint2\": \"Meera\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 21,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"calibration\",\n          \"later\": \"Daniel\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 22,\n      \"status\": \"ignored\",\n      \"facts\": []\n    }\n  ]\n}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 8140,
+        "output_chars": 2975,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2103,
+          "completion_tokens": 1017,
+          "total_tokens": 3120,
+          "cost": 0.00037971,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 16,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00037971,
+            "upstream_inference_prompt_cost": 0.00012546,
+            "upstream_inference_completions_cost": 0.00025425
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792326855-L116ZWhW1GL3I7SndW9k"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  },
+  "B2-037": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "1x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": false,
+      "paired_examples": true,
+      "independent_read": false,
+      "action_review": false
+    },
+    "header": {
+      "staff": [
+        "Lukas",
+        "Nadia",
+        "Priya",
+        "Meera",
+        "Ingrid"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Lukas",
+        "Nadia",
+        "Priya"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Lukas"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Nadia"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Priya"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Meera"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Ingrid"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "prompt_chars": 7116,
+        "schema_chars": 5973,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P4",
+                "block": "T2",
+                "polarity": "negated",
+                "evidence": "Going off the roster, Ingrid has a standing commitment that rules out the 11:00 block entirely."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P3",
+                "block": "T3",
+                "polarity": "affirmed",
+                "evidence": "Meera takes 13:00, as things stand."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P1",
+                "station": "S2",
+                "polarity": "negated",
+                "evidence": "Packing is covered by someone other than Nadia."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P2",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "Going off the roster, Priya hands straight over to Lukas."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "The person on intake precedes Lukas."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P2",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "This came up more than once, so: I'm fairly sure Priya is on the block immediately before Lukas."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P2",
+                "station": "S2",
+                "polarity": "negated",
+                "evidence": "You can rule Priya out for packing."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T1",
+                "polarity": "affirmed",
+                "evidence": "Going off the roster, Lukas takes 09:00, as things stand."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "retained_previous_lines": []
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P4",
+            "block": "T2",
+            "polarity": "negated",
+            "evidence": "Going off the roster, Ingrid has a standing commitment that rules out the 11:00 block entirely."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P3",
+            "block": "T3",
+            "polarity": "affirmed",
+            "evidence": "Meera takes 13:00, as things stand."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P1",
+            "station": "S2",
+            "polarity": "negated",
+            "evidence": "Packing is covered by someone other than Nadia."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 12,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P2",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "Going off the roster, Priya hands straight over to Lukas."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "The person on intake precedes Lukas."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P2",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "This came up more than once, so: I'm fairly sure Priya is on the block immediately before Lukas."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P2",
+            "station": "S2",
+            "polarity": "negated",
+            "evidence": "You can rule Priya out for packing."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P0",
+            "block": "T1",
+            "polarity": "affirmed",
+            "evidence": "Going off the roster, Lukas takes 09:00, as things stand."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 4,
+        "quote": "Going off the roster, Ingrid has a standing commitment that rules out the 11:00 block entirely.",
+        "op": "block",
+        "person": "P4",
+        "block": "T2",
+        "polarity": "negated",
+        "evidence": "Going off the roster, Ingrid has a standing commitment that rules out the 11:00 block entirely."
+      },
+      {
+        "line": 9,
+        "quote": "Meera takes 13:00, as things stand.",
+        "op": "block",
+        "person": "P3",
+        "block": "T3",
+        "polarity": "affirmed",
+        "evidence": "Meera takes 13:00, as things stand."
+      },
+      {
+        "line": 10,
+        "quote": "Packing is covered by someone other than Nadia.",
+        "op": "station",
+        "person": "P1",
+        "station": "S2",
+        "polarity": "negated",
+        "evidence": "Packing is covered by someone other than Nadia."
+      },
+      {
+        "line": 12,
+        "quote": "Going off the roster, Priya hands straight over to Lukas.",
+        "op": "next",
+        "earlier": "P2",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "Going off the roster, Priya hands straight over to Lukas."
+      },
+      {
+        "line": 14,
+        "quote": "The person on intake precedes Lukas.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "The person on intake precedes Lukas."
+      },
+      {
+        "line": 16,
+        "quote": "This came up more than once, so: I'm fairly sure Priya is on the block immediately before Lukas.",
+        "op": "next",
+        "earlier": "P2",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "This came up more than once, so: I'm fairly sure Priya is on the block immediately before Lukas."
+      },
+      {
+        "line": 18,
+        "quote": "You can rule Priya out for packing.",
+        "op": "station",
+        "person": "P2",
+        "station": "S2",
+        "polarity": "negated",
+        "evidence": "You can rule Priya out for packing."
+      },
+      {
+        "line": 20,
+        "quote": "Going off the roster, Lukas takes 09:00, as things stand.",
+        "op": "block",
+        "person": "P0",
+        "block": "T1",
+        "polarity": "affirmed",
+        "evidence": "Going off the roster, Lukas takes 09:00, as things stand."
+      }
+    ],
+    "secondary_rows": null,
+    "unresolved_lines": [],
+    "provisional_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "solution_count": 1,
+    "excess_solutions": false,
+    "model_calls": 1,
+    "raw_model_outputs": [
+      "{\n  \"lines\": [\n    {\n      \"line\": 3,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 4,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Ingrid\",\n          \"block\": \"11:00\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 5,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 6,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 7,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 8,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 9,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Meera\",\n          \"block\": \"13:00\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 10,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Nadia\",\n          \"station\": \"packing\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 11,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 12,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Priya\",\n          \"later\": \"Lukas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 13,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 14,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"intake\",\n          \"later\": \"Lukas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 15,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 16,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Priya\",\n          \"later\": \"Lukas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 17,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 18,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Priya\",\n          \"station\": \"packing\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 19,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 20,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Lukas\",\n          \"block\": \"09:00\",\n          \"negated\": false\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 7890,
+        "output_chars": 2489,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2079,
+          "completion_tokens": 869,
+          "total_tokens": 2948,
+          "cost": 0.00033263,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 208,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00033263,
+            "upstream_inference_prompt_cost": 0.00011538,
+            "upstream_inference_completions_cost": 0.00021725
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792326865-HVuKwf9vZFwUgf6vYc6a"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  },
+  "B2-006": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "1x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": false,
+      "paired_examples": true,
+      "independent_read": false,
+      "action_review": false
+    },
+    "header": {
+      "staff": [
+        "Daniel",
+        "Priya",
+        "Tomas",
+        "Nadia",
+        "Samuel"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Priya",
+        "Tomas",
+        "Samuel"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Daniel"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Priya"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Tomas"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Nadia"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Samuel"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "prompt_chars": 7362,
+        "schema_chars": 5999,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P1",
+                "block": "T4",
+                "polarity": "negated",
+                "evidence": "The 15:00 block is not Priya's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P1",
+                "block": "T1",
+                "polarity": "negated",
+                "evidence": "Priya has a standing commitment that rules out the 09:00 block entirely."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P2",
+                "station": "S0",
+                "polarity": "affirmed",
+                "evidence": "Going off the roster, the intake station is down to Tomas."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P4",
+                "block": "T3",
+                "polarity": "affirmed",
+                "evidence": "Whoever drew the 13:00 block, it was Samuel."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S2",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Whoever is on packing works earlier in the day than Nadia."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S2",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "Whoever is on packing works earlier in the day than Daniel."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P0",
+                "ends": [
+                  "P3",
+                  "P2"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Daniel works at some point between Nadia and Tomas, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S2",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Speaking from memory, the person on packing precedes Tomas."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P0",
+                "ends": [
+                  "P3",
+                  "P2"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Noted twice in the handover: Daniel is on after one of Nadia and Tomas and before the other."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "retained_previous_lines": []
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P1",
+            "block": "T4",
+            "polarity": "negated",
+            "evidence": "The 15:00 block is not Priya's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P1",
+            "block": "T1",
+            "polarity": "negated",
+            "evidence": "Priya has a standing commitment that rules out the 09:00 block entirely."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 12,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P2",
+            "station": "S0",
+            "polarity": "affirmed",
+            "evidence": "Going off the roster, the intake station is down to Tomas."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P4",
+            "block": "T3",
+            "polarity": "affirmed",
+            "evidence": "Whoever drew the 13:00 block, it was Samuel."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S2",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Whoever is on packing works earlier in the day than Nadia."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S2",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "Whoever is on packing works earlier in the day than Daniel."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P0",
+            "ends": [
+              "P3",
+              "P2"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Daniel works at some point between Nadia and Tomas, not necessarily adjacent to either."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S2",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "Speaking from memory, the person on packing precedes Tomas."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 21,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P0",
+            "ends": [
+              "P3",
+              "P2"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Noted twice in the handover: Daniel is on after one of Nadia and Tomas and before the other."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 5,
+        "quote": "The 15:00 block is not Priya's.",
+        "op": "block",
+        "person": "P1",
+        "block": "T4",
+        "polarity": "negated",
+        "evidence": "The 15:00 block is not Priya's."
+      },
+      {
+        "line": 11,
+        "quote": "Priya has a standing commitment that rules out the 09:00 block entirely.",
+        "op": "block",
+        "person": "P1",
+        "block": "T1",
+        "polarity": "negated",
+        "evidence": "Priya has a standing commitment that rules out the 09:00 block entirely."
+      },
+      {
+        "line": 12,
+        "quote": "Going off the roster, the intake station is down to Tomas.",
+        "op": "station",
+        "person": "P2",
+        "station": "S0",
+        "polarity": "affirmed",
+        "evidence": "Going off the roster, the intake station is down to Tomas."
+      },
+      {
+        "line": 13,
+        "quote": "Whoever drew the 13:00 block, it was Samuel.",
+        "op": "block",
+        "person": "P4",
+        "block": "T3",
+        "polarity": "affirmed",
+        "evidence": "Whoever drew the 13:00 block, it was Samuel."
+      },
+      {
+        "line": 14,
+        "quote": "Whoever is on packing works earlier in the day than Nadia.",
+        "op": "before",
+        "earlier": "S2",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Whoever is on packing works earlier in the day than Nadia."
+      },
+      {
+        "line": 15,
+        "quote": "Whoever is on packing works earlier in the day than Daniel.",
+        "op": "before",
+        "earlier": "S2",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "Whoever is on packing works earlier in the day than Daniel."
+      },
+      {
+        "line": 16,
+        "quote": "Daniel works at some point between Nadia and Tomas, not necessarily adjacent to either.",
+        "op": "between",
+        "middle": "P0",
+        "ends": [
+          "P3",
+          "P2"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Daniel works at some point between Nadia and Tomas, not necessarily adjacent to either."
+      },
+      {
+        "line": 17,
+        "quote": "Speaking from memory, the person on packing precedes Tomas.",
+        "op": "before",
+        "earlier": "S2",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "Speaking from memory, the person on packing precedes Tomas."
+      },
+      {
+        "line": 21,
+        "quote": "Noted twice in the handover: Daniel is on after one of Nadia and Tomas and before the other.",
+        "op": "between",
+        "middle": "P0",
+        "ends": [
+          "P3",
+          "P2"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Noted twice in the handover: Daniel is on after one of Nadia and Tomas and before the other."
+      }
+    ],
+    "secondary_rows": null,
+    "unresolved_lines": [],
+    "provisional_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "solution_count": 2,
+    "excess_solutions": false,
+    "model_calls": 1,
+    "raw_model_outputs": [
+      "{\n  \"lines\": [\n    {\n      \"line\": 3,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 4,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 5,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Priya\",\n          \"block\": \"15:00\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 6,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 7,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 8,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 9,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 10,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 11,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Priya\",\n          \"block\": \"09:00\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 12,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Tomas\",\n          \"station\": \"intake\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 13,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Samuel\",\n          \"block\": \"13:00\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 14,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Nadia\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 15,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Daniel\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 16,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"between\",\n          \"middle\": \"Daniel\",\n          \"endpoint1\": \"Nadia\",\n          \"endpoint2\": \"Tomas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 17,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Tomas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 18,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 19,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 20,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 21,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"between\",\n          \"middle\": \"Daniel\",\n          \"endpoint1\": \"Nadia\",\n          \"endpoint2\": \"Tomas\",\n          \"negated\": false\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 8139,
+        "output_chars": 2784,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2101,
+          "completion_tokens": 954,
+          "total_tokens": 3055,
+          "cost": 0.0003552,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 208,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.0003552,
+            "upstream_inference_prompt_cost": 0.0001167,
+            "upstream_inference_completions_cost": 0.0002385
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792326875-s74LMxBWpyzlkiCaUERp"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  },
+  "B2-022": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "1x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": false,
+      "paired_examples": true,
+      "independent_read": false,
+      "action_review": false
+    },
+    "header": {
+      "staff": [
+        "Priya",
+        "Samuel",
+        "Ayesha",
+        "Tomas",
+        "Ingrid"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Priya",
+        "Ayesha",
+        "Ingrid"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Priya"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Samuel"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Ayesha"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Tomas"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Ingrid"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "prompt_chars": 7208,
+        "schema_chars": 6017,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P4",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              },
+              {
+                "op": "next",
+                "earlier": "P0",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P0",
+                "station": "S1",
+                "polarity": "negated",
+                "evidence": "Calibration is not Priya's station."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P1",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Samuel comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Intake is covered before Ayesha comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P3",
+                "ends": [
+                  "P2",
+                  "P4"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P3",
+                "block": "T3",
+                "polarity": "affirmed",
+                "evidence": "The 13:00 block is Tomas's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P2",
+                "block": "T1",
+                "polarity": "negated",
+                "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T0",
+                "polarity": "affirmed",
+                "evidence": "I'm fairly sure the 07:00 block is Priya's."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S0",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "It bears repeating: The person on intake precedes Ayesha."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "retained_previous_lines": []
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P4",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+          },
+          {
+            "op": "next",
+            "earlier": "P0",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P0",
+            "station": "S1",
+            "polarity": "negated",
+            "evidence": "Calibration is not Priya's station."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 12,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P1",
+            "polarity": "affirmed",
+            "evidence": "Intake is covered before Samuel comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "Intake is covered before Ayesha comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P3",
+            "ends": [
+              "P2",
+              "P4"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P3",
+            "block": "T3",
+            "polarity": "affirmed",
+            "evidence": "The 13:00 block is Tomas's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P2",
+            "block": "T1",
+            "polarity": "negated",
+            "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P0",
+            "block": "T0",
+            "polarity": "affirmed",
+            "evidence": "I'm fairly sure the 07:00 block is Priya's."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 21,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S0",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "It bears repeating: The person on intake precedes Ayesha."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 8,
+        "quote": "Tomas is on after one of Ingrid and Priya and before the other.",
+        "op": "next",
+        "earlier": "P4",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+      },
+      {
+        "line": 8,
+        "quote": "Tomas is on after one of Ingrid and Priya and before the other.",
+        "op": "next",
+        "earlier": "P0",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Tomas is on after one of Ingrid and Priya and before the other."
+      },
+      {
+        "line": 10,
+        "quote": "Calibration is not Priya's station.",
+        "op": "station",
+        "person": "P0",
+        "station": "S1",
+        "polarity": "negated",
+        "evidence": "Calibration is not Priya's station."
+      },
+      {
+        "line": 13,
+        "quote": "Intake is covered before Samuel comes on.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P1",
+        "polarity": "affirmed",
+        "evidence": "Intake is covered before Samuel comes on."
+      },
+      {
+        "line": 14,
+        "quote": "Intake is covered before Ayesha comes on.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "Intake is covered before Ayesha comes on."
+      },
+      {
+        "line": 15,
+        "quote": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either.",
+        "op": "between",
+        "middle": "P3",
+        "ends": [
+          "P2",
+          "P4"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either."
+      },
+      {
+        "line": 16,
+        "quote": "The 13:00 block is Tomas's.",
+        "op": "block",
+        "person": "P3",
+        "block": "T3",
+        "polarity": "affirmed",
+        "evidence": "The 13:00 block is Tomas's."
+      },
+      {
+        "line": 17,
+        "quote": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely.",
+        "op": "block",
+        "person": "P2",
+        "block": "T1",
+        "polarity": "negated",
+        "evidence": "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely."
+      },
+      {
+        "line": 19,
+        "quote": "I'm fairly sure the 07:00 block is Priya's.",
+        "op": "block",
+        "person": "P0",
+        "block": "T0",
+        "polarity": "affirmed",
+        "evidence": "I'm fairly sure the 07:00 block is Priya's."
+      },
+      {
+        "line": 21,
+        "quote": "It bears repeating: The person on intake precedes Ayesha.",
+        "op": "before",
+        "earlier": "S0",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "It bears repeating: The person on intake precedes Ayesha."
+      }
+    ],
+    "secondary_rows": null,
+    "unresolved_lines": [],
+    "provisional_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "solution_count": 0,
+    "excess_solutions": false,
+    "model_calls": 1,
+    "raw_model_outputs": [
+      "{\"lines\":[{\"line\":3,\"status\":\"ignored\",\"facts\":[]},{\"line\":4,\"status\":\"ignored\",\"facts\":[]},{\"line\":5,\"status\":\"ignored\",\"facts\":[]},{\"line\":6,\"status\":\"ignored\",\"facts\":[]},{\"line\":7,\"status\":\"ignored\",\"facts\":[]},{\"line\":8,\"status\":\"asserted\",\"facts\":[{\"op\":\"next\",\"earlier\":\"Ingrid\",\"later\":\"Tomas\",\"negated\":false},{\"op\":\"next\",\"earlier\":\"Priya\",\"later\":\"Tomas\",\"negated\":false}]},{\"line\":9,\"status\":\"ignored\",\"facts\":[]},{\"line\":10,\"status\":\"asserted\",\"facts\":[{\"op\":\"station\",\"person\":\"Priya\",\"station\":\"calibration\",\"negated\":true}]},{\"line\":11,\"status\":\"ignored\",\"facts\":[]},{\"line\":12,\"status\":\"ignored\",\"facts\":[]},{\"line\":13,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Samuel\",\"negated\":false}]},{\"line\":14,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Ayesha\",\"negated\":false}]},{\"line\":15,\"status\":\"asserted\",\"facts\":[{\"op\":\"between\",\"middle\":\"Tomas\",\"endpoint1\":\"Ayesha\",\"endpoint2\":\"Ingrid\",\"negated\":false}]},{\"line\":16,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Tomas\",\"block\":\"13:00\",\"negated\":false}]},{\"line\":17,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Ayesha\",\"block\":\"09:00\",\"negated\":true}]},{\"line\":18,\"status\":\"ignored\",\"facts\":[]},{\"line\":19,\"status\":\"asserted\",\"facts\":[{\"op\":\"block\",\"person\":\"Priya\",\"block\":\"07:00\",\"negated\":false}]},{\"line\":20,\"status\":\"ignored\",\"facts\":[]},{\"line\":21,\"status\":\"asserted\",\"facts\":[{\"op\":\"before\",\"earlier\":\"intake\",\"later\":\"Ayesha\",\"negated\":false}]}]}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 7985,
+        "output_chars": 1492,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2101,
+          "completion_tokens": 443,
+          "total_tokens": 2544,
+          "cost": 0.00022745,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 208,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00022745,
+            "upstream_inference_prompt_cost": 0.0001167,
+            "upstream_inference_completions_cost": 0.00011075
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792326885-r7MTnbnB8ngbxFaDfVec"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  },
+  "B2-023": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "1x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": false,
+      "paired_examples": true,
+      "independent_read": false,
+      "action_review": false
+    },
+    "header": {
+      "staff": [
+        "Daniel",
+        "Lukas",
+        "Tomas",
+        "Rohan",
+        "Nadia"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Lukas",
+        "Rohan",
+        "Nadia"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Daniel"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Lukas"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Tomas"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Rohan"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Nadia"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "prompt_chars": 7362,
+        "schema_chars": 5989,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 4,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P0",
+                "ends": [
+                  "P1",
+                  "P4"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Daniel works at some point between Lukas and Nadia, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "P1",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Lukas is done before Rohan starts."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S2",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Packing is covered before Tomas comes on."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P1",
+                "block": "T1",
+                "polarity": "negated",
+                "evidence": "My recollection is that you will not find Lukas on the 09:00 block."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P1",
+                "station": "S2",
+                "polarity": "affirmed",
+                "evidence": "Packing is Lukas's station."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 12,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S1",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "As far as I know, the calibration station is covered earlier in the day than Daniel's block."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "P1",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Worth restating, since it came up twice in handover: Lukas works earlier in the day than Rohan."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "between",
+                "middle": "P3",
+                "ends": [
+                  "P0",
+                  "P2"
+                ],
+                "polarity": "affirmed",
+                "evidence": "Rohan works at some point between Daniel and Tomas, not necessarily adjacent to either."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "before",
+                "earlier": "S2",
+                "later": "P0",
+                "polarity": "affirmed",
+                "evidence": "Whoever is on packing works earlier in the day than Daniel."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 22,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P3",
+                "station": "S0",
+                "polarity": "affirmed",
+                "evidence": "Intake is Rohan's station."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22
+        ],
+        "retained_previous_lines": []
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 4,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P0",
+            "ends": [
+              "P1",
+              "P4"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Daniel works at some point between Lukas and Nadia, not necessarily adjacent to either."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "P1",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Lukas is done before Rohan starts."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S2",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "Packing is covered before Tomas comes on."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P1",
+            "block": "T1",
+            "polarity": "negated",
+            "evidence": "My recollection is that you will not find Lukas on the 09:00 block."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P1",
+            "station": "S2",
+            "polarity": "affirmed",
+            "evidence": "Packing is Lukas's station."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 12,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S1",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "As far as I know, the calibration station is covered earlier in the day than Daniel's block."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "P1",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Worth restating, since it came up twice in handover: Lukas works earlier in the day than Rohan."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "between",
+            "middle": "P3",
+            "ends": [
+              "P0",
+              "P2"
+            ],
+            "polarity": "affirmed",
+            "evidence": "Rohan works at some point between Daniel and Tomas, not necessarily adjacent to either."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "before",
+            "earlier": "S2",
+            "later": "P0",
+            "polarity": "affirmed",
+            "evidence": "Whoever is on packing works earlier in the day than Daniel."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 21,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 22,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P3",
+            "station": "S0",
+            "polarity": "affirmed",
+            "evidence": "Intake is Rohan's station."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 4,
+        "quote": "Daniel works at some point between Lukas and Nadia, not necessarily adjacent to either.",
+        "op": "between",
+        "middle": "P0",
+        "ends": [
+          "P1",
+          "P4"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Daniel works at some point between Lukas and Nadia, not necessarily adjacent to either."
+      },
+      {
+        "line": 6,
+        "quote": "Lukas is done before Rohan starts.",
+        "op": "before",
+        "earlier": "P1",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Lukas is done before Rohan starts."
+      },
+      {
+        "line": 9,
+        "quote": "Packing is covered before Tomas comes on.",
+        "op": "before",
+        "earlier": "S2",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "Packing is covered before Tomas comes on."
+      },
+      {
+        "line": 10,
+        "quote": "My recollection is that you will not find Lukas on the 09:00 block.",
+        "op": "block",
+        "person": "P1",
+        "block": "T1",
+        "polarity": "negated",
+        "evidence": "My recollection is that you will not find Lukas on the 09:00 block."
+      },
+      {
+        "line": 11,
+        "quote": "Packing is Lukas's station.",
+        "op": "station",
+        "person": "P1",
+        "station": "S2",
+        "polarity": "affirmed",
+        "evidence": "Packing is Lukas's station."
+      },
+      {
+        "line": 12,
+        "quote": "As far as I know, the calibration station is covered earlier in the day than Daniel's block.",
+        "op": "before",
+        "earlier": "S1",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "As far as I know, the calibration station is covered earlier in the day than Daniel's block."
+      },
+      {
+        "line": 15,
+        "quote": "Worth restating, since it came up twice in handover: Lukas works earlier in the day than Rohan.",
+        "op": "before",
+        "earlier": "P1",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Worth restating, since it came up twice in handover: Lukas works earlier in the day than Rohan."
+      },
+      {
+        "line": 18,
+        "quote": "Rohan works at some point between Daniel and Tomas, not necessarily adjacent to either.",
+        "op": "between",
+        "middle": "P3",
+        "ends": [
+          "P0",
+          "P2"
+        ],
+        "polarity": "affirmed",
+        "evidence": "Rohan works at some point between Daniel and Tomas, not necessarily adjacent to either."
+      },
+      {
+        "line": 20,
+        "quote": "Whoever is on packing works earlier in the day than Daniel.",
+        "op": "before",
+        "earlier": "S2",
+        "later": "P0",
+        "polarity": "affirmed",
+        "evidence": "Whoever is on packing works earlier in the day than Daniel."
+      },
+      {
+        "line": 22,
+        "quote": "Intake is Rohan's station.",
+        "op": "station",
+        "person": "P3",
+        "station": "S0",
+        "polarity": "affirmed",
+        "evidence": "Intake is Rohan's station."
+      }
+    ],
+    "secondary_rows": null,
+    "unresolved_lines": [],
+    "provisional_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "solution_count": 0,
+    "excess_solutions": false,
+    "model_calls": 1,
+    "raw_model_outputs": [
+      "{\n  \"lines\": [\n    {\n      \"line\": 3,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 4,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"between\",\n          \"middle\": \"Daniel\",\n          \"endpoint1\": \"Lukas\",\n          \"endpoint2\": \"Nadia\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 5,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 6,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"Lukas\",\n          \"later\": \"Rohan\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 7,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 8,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 9,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Tomas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 10,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Lukas\",\n          \"block\": \"09:00\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 11,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Lukas\",\n          \"station\": \"packing\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 12,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"calibration\",\n          \"later\": \"Daniel\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 13,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 14,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 15,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"Lukas\",\n          \"later\": \"Rohan\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 16,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 17,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 18,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"between\",\n          \"middle\": \"Rohan\",\n          \"endpoint1\": \"Daniel\",\n          \"endpoint2\": \"Tomas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 19,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 20,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Daniel\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 21,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 22,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Rohan\",\n          \"station\": \"intake\",\n          \"negated\": false\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 8142,
+        "output_chars": 3012,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2123,
+          "completion_tokens": 1029,
+          "total_tokens": 3152,
+          "cost": 0.00037527,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 208,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00037527,
+            "upstream_inference_prompt_cost": 0.00011802,
+            "upstream_inference_completions_cost": 0.00025725
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792326895-IYr4Nif9Fztz40toHgUa"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  },
+  "B2-005": {
+    "architecture": "model_led_named_v3",
+    "development_stage": "named_json_short",
+    "wire_contract": "named_typed_roles",
+    "budget": "1x",
+    "ablation": "full",
+    "components": {
+      "named_typed_roles": true,
+      "focused_review": false,
+      "paired_examples": true,
+      "independent_read": false,
+      "action_review": false
+    },
+    "header": {
+      "staff": [
+        "Daniel",
+        "Priya",
+        "Nadia",
+        "Lukas",
+        "Tomas"
+      ],
+      "blocks": [
+        "07:00",
+        "09:00",
+        "11:00",
+        "13:00",
+        "15:00"
+      ],
+      "stations": [
+        "intake",
+        "calibration",
+        "packing"
+      ],
+      "station_holders": [
+        "Daniel",
+        "Priya",
+        "Lukas"
+      ]
+    },
+    "symbols": {
+      "P0": {
+        "kind": "person",
+        "name": "Daniel"
+      },
+      "P1": {
+        "kind": "person",
+        "name": "Priya"
+      },
+      "P2": {
+        "kind": "person",
+        "name": "Nadia"
+      },
+      "P3": {
+        "kind": "person",
+        "name": "Lukas"
+      },
+      "P4": {
+        "kind": "person",
+        "name": "Tomas"
+      },
+      "S0": {
+        "kind": "station_holder",
+        "name": "intake"
+      },
+      "S1": {
+        "kind": "station_holder",
+        "name": "calibration"
+      },
+      "S2": {
+        "kind": "station_holder",
+        "name": "packing"
+      },
+      "T0": {
+        "kind": "block",
+        "name": "07:00"
+      },
+      "T1": {
+        "kind": "block",
+        "name": "09:00"
+      },
+      "T2": {
+        "kind": "block",
+        "name": "11:00"
+      },
+      "T3": {
+        "kind": "block",
+        "name": "13:00"
+      },
+      "T4": {
+        "kind": "block",
+        "name": "15:00"
+      }
+    },
+    "source_rules_enabled": false,
+    "literal_grounding_enabled": true,
+    "scope_filter": null,
+    "extraction_reports": [
+      {
+        "phase": "extract",
+        "source_lines": [
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "prompt_chars": 7199,
+        "schema_chars": 5981,
+        "literal_grounding": true,
+        "source_rule_hints": false,
+        "problems": [
+          {
+            "line": 3,
+            "errors": [
+              "named role uses the wrong reference type: earlier"
+            ],
+            "rejected_row": {
+              "line": 3,
+              "status": "asserted",
+              "facts": [
+                {
+                  "op": "next",
+                  "earlier": "person",
+                  "later": "Priya",
+                  "negated": false
+                }
+              ]
+            }
+          },
+          {
+            "line": 11,
+            "errors": [
+              "named role uses the wrong reference type: later"
+            ],
+            "rejected_row": {
+              "line": 11,
+              "status": "asserted",
+              "facts": [
+                {
+                  "op": "before",
+                  "earlier": "packing",
+                  "later": "Priya's block",
+                  "negated": false
+                }
+              ]
+            }
+          }
+        ],
+        "proposed_rows": [
+          {
+            "line": 3,
+            "scope": "uncertain",
+            "claims": [],
+            "support": "unresolved",
+            "structurally_valid": false
+          },
+          {
+            "line": 4,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 5,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P4",
+                "block": "T0",
+                "polarity": "affirmed",
+                "evidence": "Whoever drew the 07:00 block, it was Tomas."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 6,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P0",
+                "block": "T2",
+                "polarity": "negated",
+                "evidence": "Speaking from memory, Daniel is unavailable at 11:00."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 7,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 8,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 9,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 10,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "station",
+                "person": "P3",
+                "station": "S1",
+                "polarity": "negated",
+                "evidence": "Lukas is not assigned to calibration."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 11,
+            "scope": "uncertain",
+            "claims": [],
+            "support": "unresolved",
+            "structurally_valid": false
+          },
+          {
+            "line": 12,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 13,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P4",
+                "later": "P2",
+                "polarity": "affirmed",
+                "evidence": "Going off the roster, Tomas is on the block immediately before Nadia."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 14,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 15,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 16,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 17,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 18,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 19,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "next",
+                "earlier": "P1",
+                "later": "P3",
+                "polarity": "affirmed",
+                "evidence": "Lukas is on the block directly after Priya."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 20,
+            "scope": "nonclue",
+            "claims": [],
+            "structurally_valid": true,
+            "support": "provisional"
+          },
+          {
+            "line": 21,
+            "scope": "current_clue",
+            "claims": [
+              {
+                "op": "block",
+                "person": "P3",
+                "block": "T4",
+                "polarity": "affirmed",
+                "evidence": "Lukas takes 15:00, as things stand."
+              }
+            ],
+            "structurally_valid": true,
+            "support": "provisional"
+          }
+        ],
+        "changed_lines": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "retained_previous_lines": []
+      }
+    ],
+    "final_rows": [
+      {
+        "line": 3,
+        "scope": "uncertain",
+        "claims": [],
+        "support": "unresolved",
+        "structurally_valid": false
+      },
+      {
+        "line": 4,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 5,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P4",
+            "block": "T0",
+            "polarity": "affirmed",
+            "evidence": "Whoever drew the 07:00 block, it was Tomas."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 6,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P0",
+            "block": "T2",
+            "polarity": "negated",
+            "evidence": "Speaking from memory, Daniel is unavailable at 11:00."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 7,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 8,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 9,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 10,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "station",
+            "person": "P3",
+            "station": "S1",
+            "polarity": "negated",
+            "evidence": "Lukas is not assigned to calibration."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 11,
+        "scope": "uncertain",
+        "claims": [],
+        "support": "unresolved",
+        "structurally_valid": false
+      },
+      {
+        "line": 12,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 13,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P4",
+            "later": "P2",
+            "polarity": "affirmed",
+            "evidence": "Going off the roster, Tomas is on the block immediately before Nadia."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 14,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 15,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 16,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 17,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 18,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 19,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "next",
+            "earlier": "P1",
+            "later": "P3",
+            "polarity": "affirmed",
+            "evidence": "Lukas is on the block directly after Priya."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 20,
+        "scope": "nonclue",
+        "claims": [],
+        "structurally_valid": true,
+        "support": "provisional"
+      },
+      {
+        "line": 21,
+        "scope": "current_clue",
+        "claims": [
+          {
+            "op": "block",
+            "person": "P3",
+            "block": "T4",
+            "polarity": "affirmed",
+            "evidence": "Lukas takes 15:00, as things stand."
+          }
+        ],
+        "structurally_valid": true,
+        "support": "provisional"
+      }
+    ],
+    "facts": [
+      {
+        "line": 5,
+        "quote": "Whoever drew the 07:00 block, it was Tomas.",
+        "op": "block",
+        "person": "P4",
+        "block": "T0",
+        "polarity": "affirmed",
+        "evidence": "Whoever drew the 07:00 block, it was Tomas."
+      },
+      {
+        "line": 6,
+        "quote": "Speaking from memory, Daniel is unavailable at 11:00.",
+        "op": "block",
+        "person": "P0",
+        "block": "T2",
+        "polarity": "negated",
+        "evidence": "Speaking from memory, Daniel is unavailable at 11:00."
+      },
+      {
+        "line": 10,
+        "quote": "Lukas is not assigned to calibration.",
+        "op": "station",
+        "person": "P3",
+        "station": "S1",
+        "polarity": "negated",
+        "evidence": "Lukas is not assigned to calibration."
+      },
+      {
+        "line": 13,
+        "quote": "Going off the roster, Tomas is on the block immediately before Nadia.",
+        "op": "next",
+        "earlier": "P4",
+        "later": "P2",
+        "polarity": "affirmed",
+        "evidence": "Going off the roster, Tomas is on the block immediately before Nadia."
+      },
+      {
+        "line": 19,
+        "quote": "Lukas is on the block directly after Priya.",
+        "op": "next",
+        "earlier": "P1",
+        "later": "P3",
+        "polarity": "affirmed",
+        "evidence": "Lukas is on the block directly after Priya."
+      },
+      {
+        "line": 21,
+        "quote": "Lukas takes 15:00, as things stand.",
+        "op": "block",
+        "person": "P3",
+        "block": "T4",
+        "polarity": "affirmed",
+        "evidence": "Lukas takes 15:00, as things stand."
+      }
+    ],
+    "secondary_rows": null,
+    "unresolved_lines": [
+      3,
+      11
+    ],
+    "provisional_lines": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "solution_count": 0,
+    "excess_solutions": false,
+    "model_calls": 1,
+    "raw_model_outputs": [
+      "{\n  \"lines\": [\n    {\n      \"line\": 3,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"person\",\n          \"later\": \"Priya\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 4,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 5,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Tomas\",\n          \"block\": \"07:00\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 6,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Daniel\",\n          \"block\": \"11:00\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 7,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 8,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 9,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 10,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"station\",\n          \"person\": \"Lukas\",\n          \"station\": \"calibration\",\n          \"negated\": true\n        }\n      ]\n    },\n    {\n      \"line\": 11,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"before\",\n          \"earlier\": \"packing\",\n          \"later\": \"Priya's block\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 12,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 13,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Tomas\",\n          \"later\": \"Nadia\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 14,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 15,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 16,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 17,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 18,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 19,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"next\",\n          \"earlier\": \"Priya\",\n          \"later\": \"Lukas\",\n          \"negated\": false\n        }\n      ]\n    },\n    {\n      \"line\": 20,\n      \"status\": \"ignored\",\n      \"facts\": []\n    },\n    {\n      \"line\": 21,\n      \"status\": \"asserted\",\n      \"facts\": [\n        {\n          \"op\": \"block\",\n          \"person\": \"Lukas\",\n          \"block\": \"15:00\",\n          \"negated\": false\n        }\n      ]\n    }\n  ]\n}"
+    ],
+    "call_metadata": [
+      {
+        "prompt_chars": 7976,
+        "output_chars": 2574,
+        "finish_reason": "stop",
+        "usage": {
+          "prompt_tokens": 2083,
+          "completion_tokens": 898,
+          "total_tokens": 2981,
+          "cost": 0.00034012,
+          "is_byok": false,
+          "prompt_tokens_details": {
+            "cached_tokens": 208,
+            "cache_write_tokens": 0,
+            "audio_tokens": 0,
+            "video_tokens": 0
+          },
+          "cost_details": {
+            "upstream_inference_cost": 0.00034012,
+            "upstream_inference_prompt_cost": 0.00011562,
+            "upstream_inference_completions_cost": 0.0002245
+          },
+          "completion_tokens_details": {
+            "reasoning_tokens": 0,
+            "image_tokens": 0,
+            "audio_tokens": 0
+          }
+        },
+        "wire_mode": "json_object_deepinfra_short",
+        "provider": "DeepInfra",
+        "response_model": "ibm-granite/granite-4.2-8b",
+        "response_id": "gen-1792326905-HH92x4sNjid9MbkzxNWO"
+      }
+    ],
+    "wire_mode": "json_object_deepinfra_short"
+  }
+}

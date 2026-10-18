@@ -1,0 +1,47 @@
+{
+  "B2-022": {
+    "case": "ambiguous",
+    "assignments": [
+      {
+        "Priya": {
+          "block": "07:00",
+          "station": "intake"
+        },
+        "Samuel": {
+          "block": "09:00"
+        },
+        "Ayesha": {
+          "block": "11:00",
+          "station": "calibration"
+        },
+        "Tomas": {
+          "block": "13:00"
+        },
+        "Ingrid": {
+          "block": "15:00",
+          "station": "packing"
+        }
+      },
+      {
+        "Priya": {
+          "block": "07:00",
+          "station": "intake"
+        },
+        "Samuel": {
+          "block": "09:00"
+        },
+        "Ayesha": {
+          "block": "11:00",
+          "station": "packing"
+        },
+        "Tomas": {
+          "block": "13:00"
+        },
+        "Ingrid": {
+          "block": "15:00",
+          "station": "calibration"
+        }
+      }
+    ]
+  }
+}

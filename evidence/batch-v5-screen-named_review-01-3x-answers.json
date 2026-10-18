@@ -1,0 +1,119 @@
+{
+  "B2-002": {
+    "case": "unique",
+    "assignment": {
+      "Daniel": {
+        "block": "11:00",
+        "station": "intake"
+      },
+      "Rohan": {
+        "block": "09:00",
+        "station": "packing"
+      },
+      "Nadia": {
+        "block": "13:00"
+      },
+      "Priya": {
+        "block": "15:00"
+      },
+      "Meera": {
+        "block": "07:00",
+        "station": "calibration"
+      }
+    }
+  },
+  "B2-037": {
+    "case": "unique",
+    "assignment": {
+      "Lukas": {
+        "block": "09:00",
+        "station": "packing"
+      },
+      "Nadia": {
+        "block": "11:00",
+        "station": "calibration"
+      },
+      "Priya": {
+        "block": "07:00",
+        "station": "intake"
+      },
+      "Meera": {
+        "block": "13:00"
+      },
+      "Ingrid": {
+        "block": "15:00"
+      }
+    }
+  },
+  "B2-006": {
+    "case": "ambiguous",
+    "assignments": [
+      {
+        "Daniel": {
+          "block": "11:00"
+        },
+        "Priya": {
+          "block": "07:00",
+          "station": "packing"
+        },
+        "Tomas": {
+          "block": "09:00",
+          "station": "intake"
+        },
+        "Nadia": {
+          "block": "15:00"
+        },
+        "Samuel": {
+          "block": "13:00",
+          "station": "calibration"
+        }
+      },
+      {
+        "Daniel": {
+          "block": "11:00"
+        },
+        "Priya": {
+          "block": "07:00",
+          "station": "packing"
+        },
+        "Tomas": {
+          "block": "15:00",
+          "station": "intake"
+        },
+        "Nadia": {
+          "block": "09:00"
+        },
+        "Samuel": {
+          "block": "13:00",
+          "station": "calibration"
+        }
+      }
+    ]
+  },
+  "B2-022": {
+    "case": "inconsistent",
+    "conflicts": [
+      "Tomas works at some point between Ayesha and Ingrid, not necessarily adjacent to either.",
+      "Speaking from memory, Ayesha has a standing commitment that rules out the 09:00 block entirely.",
+      "I'm fairly sure the 07:00 block is Priya's.",
+      "It bears repeating: The person on intake precedes Ayesha."
+    ]
+  },
+  "B2-023": {
+    "case": "inconsistent",
+    "conflicts": [
+      "Daniel works at some point between Lukas and Nadia, not necessarily adjacent to either.",
+      "As far as I know, the calibration station is covered earlier in the day than Daniel's block.",
+      "Whoever is on packing works earlier in the day than Daniel.",
+      "Intake is Rohan's station."
+    ]
+  },
+  "B2-005": {
+    "case": "inconsistent",
+    "conflicts": [
+      "Whoever drew the 07:00 block, it was Tomas.",
+      "Nadia has a standing commitment that rules out the 09:00 block entirely.",
+      "Going off the roster, Tomas is on the block immediately before Nadia."
+    ]
+  }
+}

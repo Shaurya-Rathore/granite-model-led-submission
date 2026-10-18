@@ -1,0 +1,2 @@
+# Python 3.12.12. Optional OS certificate-root integration, pinned for reruns.
+truststore==0.10.3
