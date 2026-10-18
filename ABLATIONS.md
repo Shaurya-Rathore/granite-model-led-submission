@@ -32,14 +32,16 @@ component-ablation requirement is therefore not fulfilled by this table.
 
 ## Reproduce an arm
 
+First extract the public inputs with `python3 -m zipfile -e results.zip results`.
+
 ```sh
-./run items.json --budget 3x --out full.json --trace-out full-traces.json
-./run items.json --budget 3x --ablation no_independent \
+./run results/public/items.json --budget 3x --out full.json --trace-out full-traces.json
+./run results/public/items.json --budget 3x --ablation no_independent \
   --out no-independent.json --trace-out no-independent-traces.json
-python3 -m model_solver.evaluate full.json --items items.json \
-  --key visible_key.json --traces full-traces.json --out full-score.json
-python3 -m model_solver.evaluate no-independent.json --items items.json \
-  --key visible_key.json --traces no-independent-traces.json \
+python3 -m model_solver.evaluate full.json --items results/public/items.json \
+  --key results/public/visible_key.json --traces full-traces.json --out full-score.json
+python3 -m model_solver.evaluate no-independent.json --items results/public/items.json \
+  --key results/public/visible_key.json --traces no-independent-traces.json \
   --out no-independent-score.json
 ```
 
@@ -50,7 +52,7 @@ and run count for both arms. Keep failures in the requested-population denominat
 ## Reproduction driver
 
 ```sh
-python3 ablate.py items.json --key visible_key.json --out-dir results/ablations
+python3 -m model_solver.ablate results/public/items.json --key results/public/visible_key.json --out-dir results/ablations
 ```
 
 The default prints a dry-run plan and request upper bound without API calls.

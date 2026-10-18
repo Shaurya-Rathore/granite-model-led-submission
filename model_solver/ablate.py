@@ -9,7 +9,7 @@ from pathlib import Path
 import subprocess
 import sys
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 CAPS = {"1x": 1, "3x": 3, "10x": 10}
 ARMS = {"full": tuple(CAPS), "no_examples": tuple(CAPS),
         "no_scope_examples": tuple(CAPS), "no_grounding": tuple(CAPS),

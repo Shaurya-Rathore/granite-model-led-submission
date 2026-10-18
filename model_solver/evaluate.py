@@ -16,8 +16,8 @@ PACKAGE = Path(__file__).resolve().parent.parent
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("answers", help="saved model-led answers JSON")
-    parser.add_argument("--items", default=str(PACKAGE / "items.json"))
-    parser.add_argument("--key", default=str(PACKAGE / "visible_key.json"))
+    parser.add_argument("--items", default=str(PACKAGE / "results/public/items.json"))
+    parser.add_argument("--key", default=str(PACKAGE / "results/public/visible_key.json"))
     parser.add_argument("--traces", help="optional saved model-led traces JSON")
     parser.add_argument("--out", help="optional combined score and diagnostics JSON")
     args = parser.parse_args()
@@ -29,7 +29,7 @@ def main():
     key = {n: value for n, value in key.items() if n in item_ids}
     if set(key) != item_ids:
         raise ValueError("The scoring key must contain every requested item")
-    score = runpy.run_path(str(PACKAGE / "score.py"))["score"](key, answers, items)
+    score = runpy.run_path(str(PACKAGE / "model_solver/score.py"))["score"](key, answers, items)
     report = {"score": score, "requested_items": len(items), "returned_items": len(item_ids & set(answers))}
     if args.traces:
         traces = load(args.traces)
