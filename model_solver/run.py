@@ -1,4 +1,4 @@
-"""Experimental model-led shift-note interpreter."""
+"""Budgeted Granite extraction followed by exact schedule solving."""
 from __future__ import annotations
 
 import argparse
@@ -27,7 +27,7 @@ def main():
     parser.add_argument("--trace-out", help="optional extraction and call trace JSON path")
     parser.add_argument("--ablation", default="full", choices=ABLATIONS)
     parser.add_argument("--stage", default="named_review", choices=STAGES,
-                        help="named_review is the current typed extraction/independent-read/correction stage; earlier stages remain selectable")
+                        help="named_review is the default; named_json variants are optional output-route experiments")
     parser.add_argument("--workers", type=int, default=1)
     args = parser.parse_args()
     if args.workers < 1:

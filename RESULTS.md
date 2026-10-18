@@ -29,7 +29,7 @@ columns are declared kinds. Missing/unparsed answers: zero in each run.
 | Inconsistent | 0 | 0 | 2 |
 
 The separate official matrices and per-kind rates are preserved in
-`evidence/batch-v5-screen-named_review-01-{1x,3x}-score.json`.
+`results.zip`, under `default/1x-score.json` and `default/3x-score.json`.
 
 ## Short-guide experiment
 
@@ -53,13 +53,16 @@ These are selected public development results, not full-set or held-out accuracy
 The current method's full-set curve, 10x score and component-removal scores are
 unmeasured (N/M). A later comparison stopped after six HTTP 403 API-key
 spending-limit rejections and zero model responses; it supplies no semantic
-accuracy estimate. A de-identified summary is in `evidence/evaluation-stop.json`.
+accuracy estimate.
 
-The scorer, public inputs and key are included unchanged. Run counts, predictions,
-raw responses and traces accompany each measured trial. `check_submission.py`
-replays saved responses and re-scores their answers against the original scorer.
-Replay is an implementation check, not another sampled run. Required sampling
-settings permit variation between live runs.
+The scorer, public inputs and key are included unchanged. `results.zip` contains:
 
-Historical results from another implementation are identified separately in
-`METHOD_COMPARISON.md`. None is substituted for a score of this default.
+- `default/`: the six selected items, answers, scores and traces at 1x and 3x.
+- `short-guide-screen/`, `short-guide-correction/`, `short-guide-repeat/`:
+  the separate trials above, including their failures.
+- `context-probe.json`: the clue-isolation comparison used in the write-up.
+- `runs.json`: sampling settings, run counts and original manifest hashes.
+
+Answer, score and trace files retain their original bytes. The measurements
+predate repository cleanup; no new sampled run was made during cleanup.
+Required sampling settings permit variation between live runs.

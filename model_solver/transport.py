@@ -65,7 +65,6 @@ class GraniteClient:
         self.item_id = item_id
         self.calls = 0
         self.raw_outputs = []
-        self.parsed_outputs = []
         self.call_metadata = []
         self.wire_mode = 'json_schema'
         if not self.base_url or not self.api_key:
@@ -85,12 +84,7 @@ class GraniteClient:
             "response_format": response_format,
             "provider": {"require_parameters": True},
         }
-        if response_format.get('type') == 'relation_tools':
-            payload.pop('response_format')
-            payload['tools'] = response_format['tools']
-            payload['provider'] = {'require_parameters':True,'only':['deepinfra'],'allow_fallbacks':False}
-            payload['messages'][0]['content'] = 'Record literal shift-note interpretations using the provided tools. Do not solve the rota. Do not output prose.'
-        elif self.wire_mode in ('json_object_deepinfra','json_object_deepinfra_short'):
+        if self.wire_mode in ('json_object_deepinfra','json_object_deepinfra_short'):
             payload['response_format'] = {'type':'json_object'}
             payload['provider'] = {'require_parameters':True,'only':['deepinfra'],'allow_fallbacks':False}
             if self.wire_mode=='json_object_deepinfra_short':
@@ -121,36 +115,18 @@ class GraniteClient:
             detail = e.read().decode("utf-8", errors="replace")[:500]
             raise RuntimeError(f"Model endpoint returned HTTP {e.code}: {detail}") from e
         message = payload['choices'][0]['message']
-        tool_mode = response_format.get('type') == 'relation_tools'
-        content = json.dumps(message,ensure_ascii=False) if tool_mode else message.get("content", "")
+        content = message.get("content", "")
         self.raw_outputs.append(content)
-        self.call_metadata.append({"prompt_chars": len(request_body['messages'][-1]['content']), "output_chars": len(content) if isinstance(content, str) else 0, "finish_reason": payload["choices"][0].get("finish_reason"), "usage": payload.get("usage", {}), 'wire_mode':'relation_tools_deepinfra' if tool_mode else self.wire_mode,'provider':payload.get('provider'),'response_model':payload.get('model'),'response_id':payload.get('id')})
-        if tool_mode:
-            calls = message.get('tool_calls')
-            if not isinstance(calls,list) or not calls:
-                raise ValueError('Model did not return extraction tool calls')
-            parsed = {'tool_calls':calls}
-            self.parsed_outputs.append(parsed)
-            return parsed
+        self.call_metadata.append({"prompt_chars": len(request_body['messages'][-1]['content']), "output_chars": len(content) if isinstance(content, str) else 0, "finish_reason": payload["choices"][0].get("finish_reason"), "usage": payload.get("usage", {}), 'wire_mode':self.wire_mode,'provider':payload.get('provider'),'response_model':payload.get('model'),'response_id':payload.get('id')})
         if not isinstance(content, str):
             raise ValueError("Model response contained no text JSON")
-        lines_schema = response_format.get("json_schema", {}).get("schema", {}).get("properties", {}).get("lines", {})
-        parsed = parse_model_json(content, mapping=lines_schema.get("type") == "object")
-        self.parsed_outputs.append(parsed)
-        return parsed
+        return parse_model_json(content)
 
-def parse_model_json(content: str, *, mapping: bool = False) -> dict[str, Any]:
-    def unique_fields(pairs):
-        result = {}
-        for key,value in pairs:
-            if key in result:
-                raise ValueError("Model response repeats a JSON property: " + key)
-            result[key] = value
-        return result
+def parse_model_json(content: str) -> dict[str, Any]:
     try:
-        obj = json.loads(content, **({"object_pairs_hook": unique_fields} if mapping else {}))
-    except json.JSONDecodeError as e:
-        raise ValueError(f"Model response did not match the JSON contract: {e.msg} at character {e.pos}") from e
-    if not isinstance(obj, dict) or not isinstance(obj.get("lines"), dict if mapping else list):
-        raise ValueError("Model response must be an object containing a lines " + ("object" if mapping else "array"))
+        obj = json.loads(content)
+    except json.JSONDecodeError as error:
+        raise ValueError(f"Model response did not match the JSON contract: {error.msg} at character {error.pos}") from error
+    if not isinstance(obj, dict) or not isinstance(obj.get("lines"), list):
+        raise ValueError("Model response must be an object containing a lines array")
     return obj

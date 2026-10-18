@@ -2,9 +2,7 @@
 from __future__ import annotations
 
 from collections import Counter
-from typing import Any
-
-from .representation import VERDICTS, literal_present, symbol_table, validate_row
+from .representation import literal_present, symbol_table, validate_row
 
 STATUSES = ("asserted", "ignored", "unclear")
 ACTIONS = ("keep", "remove", "replace", "unresolved")
@@ -22,27 +20,6 @@ def references(header):
 def literal_references(text, header):
     symbols = symbol_table(header)
     return [label for label, token in references(header).items() if literal_present(symbols[token]["name"], text)]
-
-
-def response_schema(lines, header, *, phase, stage="schema"):
-    fact = {"type": "object", "properties": {
-        "op": {"type": "string", "enum": list(OPS)},
-        "args": {"type": "array", "items": {"type": "string", "enum": list(references(header))}, "minItems": 2, "maxItems": 3},
-        "negated": {"type": "boolean"}}, "required": ["op", "args", "negated"], "additionalProperties": False}
-    fields = {"line": {"type": "integer", "enum": [line["line"] for line in lines]}}
-    if phase == "review":
-        fields["action"] = {"type": "string", "enum": list(ACTIONS)}
-    else:
-        fields["status"] = {"type": "string", "enum": list(STATUSES)}
-    if phase != "classify":
-        fields["facts"] = {"type": "array", "items": fact, "minItems": 0, "maxItems": 3}
-    if phase in ("audit", "repair"):
-        # Retain v1's audit policy only in the first two incremental stages.
-        fields["verdict"] = {"type": "string", "enum": list(VERDICTS)}
-    row = {"type": "object", "properties": fields, "required": list(fields), "additionalProperties": False}
-    return {"type": "json_schema", "json_schema": {"name": "model_shift_" + phase, "strict": True,
-            "schema": {"type": "object", "properties": {"lines": {"type": "array", "items": row,
-                        "minItems": len(lines), "maxItems": len(lines)}}, "required": ["lines"], "additionalProperties": False}}}
 
 
 def compile_fact(fact, source, header):
@@ -77,14 +54,6 @@ def flat_fact(claim, header):
     return {"op": op, "args": [labels[token] for token in args], "negated": claim["polarity"] == "negated"}
 
 
-def flat_row(row, header, *, include_verdict=False):
-    status = "asserted" if row["scope"] == "current_clue" else "unclear" if row["scope"] == "uncertain" else "ignored"
-    result = {"line": row["line"], "status": status, "facts": [flat_fact(c, header) for c in row["claims"]]}
-    if include_verdict:
-        result["verdict"] = row.get("verdict", "supported")
-    return result
-
-
 def compile_row(row, source, header, *, phase="extract", grounding=True):
     expected = {"line", "status", "facts"} | ({"verdict"} if phase in ("audit", "repair") else set())
     if not isinstance(row, dict) or set(row) != expected or type(row.get("line")) is not int or row["line"] != source["line"]:
@@ -112,55 +81,6 @@ def unknown(line_no):
     return {"line": line_no, "scope": "uncertain", "claims": [], "support": "unresolved", "structurally_valid": False}
 
 
-def validate_output(obj, sources, header, *, phase="extract", grounding=True):
-    source_map = {line["line"]: line for line in sources}
-    rows, problems, seen = {}, [], set()
-    for row in obj.get("lines", []):
-        n = row.get("line") if isinstance(row, dict) else None
-        if type(n) is not int or n not in source_map:
-            problems.append({"line": None, "errors": ["unexpected source line"]})
-            continue
-        if n in seen:
-            problems.append({"line": n, "errors": ["duplicate source row"]})
-            rows[n] = unknown(n)
-            continue
-        seen.add(n)
-        internal, errors = compile_row(row, source_map[n], header, phase=phase, grounding=grounding)
-        if errors:
-            problems.append({"line": n, "errors": errors, "rejected_row": row})
-            rows[n] = unknown(n)
-        else:
-            rows[n] = internal
-    for n in source_map.keys() - seen:
-        problems.append({"line": n, "errors": ["omitted source row"]})
-        rows[n] = unknown(n)
-    return rows, problems
-
-
-def validate_statuses(obj, sources):
-    ids = {source["line"] for source in sources}
-    statuses, problems, seen = {}, [], set()
-    for row in obj.get("lines", []):
-        n = row.get("line") if isinstance(row, dict) else None
-        if type(n) is not int or n not in ids:
-            problems.append({"line": None, "errors": ["unexpected source line"]})
-            continue
-        if n in seen:
-            statuses[n] = "unclear"
-            problems.append({"line": n, "errors": ["duplicate source row"]})
-            continue
-        seen.add(n)
-        if set(row) != {"line", "status"} or row.get("status") not in STATUSES:
-            statuses[n] = "unclear"
-            problems.append({"line": n, "errors": ["invalid status row"]})
-        else:
-            statuses[n] = row["status"]
-    for n in ids - seen:
-        statuses[n] = "unclear"
-        problems.append({"line": n, "errors": ["omitted source row"]})
-    return statuses, problems
-
-
 def review_row(row, source, header, prior, *, grounding=True):
     """An explicit model action, separate from JSON/type validity."""
     if not isinstance(row, dict) or set(row) != {"line", "action", "facts"} or type(row.get("line")) is not int or row["line"] != source["line"]:
@@ -182,5 +102,4 @@ def review_row(row, source, header, prior, *, grounding=True):
             return None, ["cannot verify an unresolved candidate by keeping it"]
         return {**prior, "support": "supported"}, []
     # Preserve the existing interpretation as provisional, not source-verified.
-    # Blindly withdrawing all uncertain rows lost the correct v1 conflict core.
     return {**prior, "support": "unresolved"}, []

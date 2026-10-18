@@ -2,7 +2,6 @@
 import json
 
 from .flat import literal_references
-from .incremental_prompts import SCOPE as ORIGINAL_SCOPE
 from .named import named_fact
 
 SCOPE = """Read each original line for its assertion about the CURRENT rota. Confidence/recall hedges retain full force. Keep direct constraints, including station-holder timing, exclusions and fragments expressing succession. Ignore explicitly historical arrangements, hypothetical alternatives, open questions, preferences and unrelated events. A report that someone requested a change does not alone specify their actual current block; distinguish the reported request from an explicit current exclusion. Use unclear if that scope cannot be resolved from the words. Preserve genuine contradictions. Check both clauses in contrasts.
@@ -49,7 +48,6 @@ Return one action per selected line: keep preserves the complete PRIMARY reading
 
 def build_prompt(lines, header, phase, *, stage, rows=None, secondary=None,
                  examples=True, scope_examples=True, anchor_entities=True):
-    paired = stage in ("named_examples", "named_review")
     task = {
         "classify": "Classify current scope for every original line.",
         "extract": "Extract current constraints independently from EVERY original line; classify and encode together.",
@@ -59,12 +57,12 @@ def build_prompt(lines, header, phase, *, stage, rows=None, secondary=None,
         "repair": "Re-read these original lines independently. Return complete corrected readings and verdicts.",
         "reread": "Re-read these original lines independently. Return complete corrected current facts.",
     }[phase]
-    parts = [task, SCOPE if paired else ORIGINAL_SCOPE, "HEADER:", json.dumps(header, ensure_ascii=False)]
+    parts = [task, SCOPE, "HEADER:", json.dumps(header, ensure_ascii=False)]
     if phase != "classify":
         parts.append(OPERATORS)
         if examples:
             parts.append(RELATIONS)
-    if paired and examples and scope_examples:
+    if examples and scope_examples:
         parts.append(CONTRASTS)
     if phase in ("audit", "repair"):
         parts.append("verdict: supported, missing_clue, wrong_scope, wrong_operator, wrong_reference, reversed, wrong_polarity, or uncertain.")

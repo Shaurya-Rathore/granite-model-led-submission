@@ -14,7 +14,6 @@ ROLES = {
     "between": ("middle", "endpoint1", "endpoint2"),
 }
 unknown = flat.unknown
-validate_statuses = flat.validate_statuses
 
 
 def label_groups(header):
@@ -88,12 +87,6 @@ def named_fact(claim, header):
     return {"op": wire["op"], **dict(zip(ROLES[wire["op"]], wire["args"])), "negated": wire["negated"]}
 
 
-def named_row(row, header, *, include_verdict=False):
-    result = flat.flat_row(row, header, include_verdict=include_verdict)
-    result["facts"] = [named_fact(claim, header) for claim in row["claims"]]
-    return result
-
-
 def compile_row(row, source, header, *, phase="extract", grounding=True):
     if not isinstance(row, dict) or not isinstance(row.get("facts"), list):
         return None, ["invalid named row or facts array"]
@@ -139,7 +132,7 @@ def review_row(row, source, header, prior, *, grounding=True):
 
 def review_targets(sources, header, primary, secondary, invalid_lines=()):
     """Prioritize disagreement/structure, never match relationship words."""
-    from .legacy_v1.pipeline import reading_signature
+    from .representation import reading_signature
     reasons = {}
     for source in sources:
         n = source["line"]

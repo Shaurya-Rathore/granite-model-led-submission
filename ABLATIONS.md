@@ -29,10 +29,6 @@ component-ablation requirement is therefore not fulfilled by this table.
 - At 10x, the bounded reread policy remains active; the cap is still ten.
 - At 1x, independent reading and review are absent, so their switches have no
   effect. Primary extraction chunking applies only to 10x.
-- `--stage review` offers a positional-contract architecture comparison. It also
-  changes prompts/examples, so it does not isolate named roles alone.
-- `no_filter` and `no_partial_atoms` are not applicable removal arms for this
-  default and are excluded from the comparison driver.
 
 ## Reproduce an arm
 
